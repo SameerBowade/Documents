@@ -1,0 +1,9 @@
+Dispose
+Garbage collector is responsible for releasing the memory (objects) that is not being used by the application. 
+But GC has limitation that, it can reclaim or release only memory which is used by managed resources. 
+There are a couple of resources which GC is not able to release as it doesn't have information that, how to claim memory from those resources like File handlers, 
+window handlers, network sockets, database connections etc. 
+If your application is having these resources than its programmer’s responsibility to release unmanaged resources. 
+For example, if we open a file in our program and not closed it after processing than that file will not be available for other operation or 
+it is being used by other application than they cannot open or modify that file. For this purpose, FileStream class provides Dispose method. 
+We must call this method after file processing finished. Otherwise, it will through exception Access Denied or file is being used by other program.
