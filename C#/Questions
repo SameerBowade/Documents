@@ -26,7 +26,8 @@ OOPS
 
 4.       Where exactly have you implement multiple inheritance?
 
-5.       Suppose I have two interface, interface A and interface B and I’m implementing those in interface in C, but interface A and interface B both have a display method, how would my class C know that they, this display method is for A and this display method is for C?
+5.       Suppose I have two interface, interface A and interface B and I’m implementing those in interface in C, but interface A and interface B 
+  both have a display method, how would my class C know that they, this display method is for A and this display method is for C?
 
 6.       What do you understand by state and behavior?
 
@@ -38,15 +39,18 @@ OOPS
 
 10.   Have you ever used static class? Can I call static function with object of my class? Can I access variable inside static function?
 
-11.   How do you manage authentication and authorization? What would I need to pass to access the WEB API? How do you generate authorization token? Do you know any other method to authenticate WEB API? Any tools do you know to generate the token?
+11.   How do you manage authentication and authorization? What would I need to pass to access the WEB API? How do you generate authorization token? 
+    Do you know any other method to authenticate WEB API? Any tools do you know to generate the token?
 
 12.   Apart from MVC have you worked with traditional ASP.NET pages
 
 13.   How do manage to protect some MTML Files with authentication?
 
-14.   Let’s say You have developed ASP.NET standard web application and deployed to sever and, I know you developed in Web.conflict file its is a root folder and I am trying to access ABC.com/web.conflict then what will happen?
+14.   Let’s say You have developed ASP.NET standard web application and deployed to sever and, I know you developed in Web.conflict file its is a root folder 
+  and I am trying to access ABC.com/web.conflict then what will happen?
 
-    Answer. IIS will not allow you do open it through a browser assuming you are accessing it remotely.  This is definately due to security because connection string and application specific information is usually stored in the web.config file.
+    Answer. IIS will not allow you do open it through a browser assuming you are accessing it remotely.  
+     This is definately due to security because connection string and application specific information is usually stored in the web.config file.
 
 15.   Do you know why ISS is blocking web.conflict? Can I have multiple web.conflict file in project? If do have any any. conflict file what will happen?
 
@@ -108,19 +112,23 @@ OOPS
 
 44.   What are the default methods, with reference to interface particularly?
 
-45.   I have a class A which has constructor, now I have class B which inherits from A and it also has an constructor, when I make instance of B, obviously constructor of B would be called, so will it automatically called the constructor of the child class A or Not?
+45.   I have a class A which has constructor, now I have class B which inherits from A and it also has an constructor, 
+ when I make instance of B, obviously constructor of B would be called, so will it automatically called the constructor of the child class A or Not?
 
 46.   Can you explain what is polymorphisms? Can you give me an example of method overloading in C#?
 
-47.   Let say I have two method, and both parameters are same Integer A and integer B and second method is parameter integer A and B, but written type is different, do we call this method overloading? Why would it throw error, how will I come to know? Why complier will throw error?
+47.   Let say I have two method, and both parameters are same Integer A and integer B and second method is parameter integer A and B, 
+ but written type is different, do we call this method overloading? Why would it throw error, how will I come to know? Why complier will throw error?
 
 48.   How method over riding work?
 
 49.   What is syntax in C# to override the method?
 
-50.   In child class if I don’t display don’t use override and use the new keyword, in that case what would happen, let say base class is virtual but in the child class, I’m using override I’m using new word?
+50.   In child class if I don’t display don’t use override and use the new keyword, in that case what would happen, 
+ let say base class is virtual but in the child class, I’m using override I’m using new word?
 
-51.   Do you know how to call the parent class method? From child class I want to call parent class method, how can I call it? How to call parent class constructor from child class constructor?
+51.   Do you know how to call the parent class method? From child class I want to call parent class method, how can I call it? 
+ How to call parent class constructor from child class constructor?
 
 52.   How many static constructors are allowed in a class?
 
@@ -137,13 +145,15 @@ d) Overloading
 
 1.       What is IL code?
 
-2.       I have visual studio open and I have simple console app which just read out Hello word, now I am compiling it to exe and then I take the exe and ran it, So at very high level can you tell me what is happen behind the scenes when I compile it and run it?
+2.       I have visual studio open and I have simple console app which just read out Hello word, now I am compiling it to exe 
+ and then I take the exe and ran it, So at very high level can you tell me what is happen behind the scenes when I compile it and run it?
 
 3.       What is a garbage collection? Is part of windows or part of framework?
 
 4.       What is different between .NET Core and .NET Framework? Anything related to dependency injection?
 
-5.       Do you know LINQ Expressions? Suppose Array of integers 1 to 10 and want to get numbers greater than 4, in array, how do I get it? Now Suppose, I wanted to write my custom LINQ method, when I call this method greater than 4, when I call this method array it should give me number greater than 4?
+5.       Do you know LINQ Expressions? Suppose Array of integers 1 to 10 and want to get numbers greater than 4, in array, how do I get it? 
+  Now Suppose, I wanted to write my custom LINQ method, when I call this method greater than 4, when I call this method array it should give me number greater than 4?
 
 6.       What is extension method?
 
@@ -153,7 +163,8 @@ d) Overloading
 
 9.       Why can’t I use the List everywhere, why I need to use dictionary?
 
-10.   Suppose I have a huge of list, I am going to remove the element in middle of list? At high level can you tell me what is happening behind the scenes? What happens to the empty space in the list?
+10.   Suppose I have a huge of list, I am going to remove the element in middle of list? At high level can you tell me what is happening behind the scenes? 
+   What happens to the empty space in the list?
 
 11.   Are you familiar with generic? What do mean by generic method? Where is generic part coming to play if you say about specific.
 
@@ -231,7 +242,8 @@ JavaScript
 
 4.       I have 10 JavaScript and 10 CSS file, and I would like it to merge it, how can I merge it?
 
-5.       Within a function I written a for loop, my for loop is for where i=0, i less than 9, i++, written the body I have console.logi and out outside the for loop I have one more console.logi, so if I call this function, what should I expect to see?
+5.       Within a function I written a for loop, my for loop is for where i=0, i less than 9, i++, written the body I have console.logi 
+   and out outside the for loop I have one more console.logi, so if I call this function, what should I expect to see?
 
 6.       On high level tell me how JavaScript executes the function?
 
@@ -243,23 +255,25 @@ JavaScript
 
 SQL
 
-1.       Two inner joins and two outer joins, and it has few web classes, for some reason query is running slowly, when it returns it returns only 10 rows, Now I want to troubleshoot why query is running slowly. How do I go about it?
+1. Two inner joins and two outer joins, and it has few web classes, for some reason query is running slowly, 
+ when it returns it returns only 10 rows, Now I want to troubleshoot why query is running slowly. How do I go about it?
 
-2.       What are advantage and disadvantages of using index?
+2. What are advantage and disadvantages of using index?
 
-3.       If I have a main transaction table, to which I am very frequently writing the data and once in while I read data, would you recommend me to create index of table to improve the performance?
+3. If I have a main transaction table, to which I am very frequently writing the data and once in while I read data, 
+ would you recommend me to create index of table to improve the performance?
 
-4.       What is foreign key?
+4. What is foreign key?
 
-5.       What is the difference between foreign key and primary key?
+5. What is the difference between foreign key and primary key?
 
-6.       Along with installer, do you also use SQL Server?
+6. Along with installer, do you also use SQL Server?
 
-7.       Are you writing store procedure? How do you manage to protect the business logic in store procedure so that no one from client side can read it?
+7. Are you writing store procedure? How do you manage to protect the business logic in store procedure so that no one from client side can read it?
 
-8.       Difference between DROP, DELETE and TRUNCATE?
+8. Difference between DROP, DELETE and TRUNCATE?
 
-9.       Can we insert NULL value in foreign key columns?
+9. Can we insert NULL value in foreign key columns?
 
 Ans Yes
 
@@ -274,54 +288,54 @@ d) None of the Mentioned
 
 Asp.NET
 
-1.       What are the advantages of ASP.NET Core?
+1.  What are the advantages of ASP.NET Core?
 
-2.       Have you work with Containerization application?
+2.  Have you work with Containerization application?
 
-3.       Have you ever written Unit Test.
+3.  Have you ever written Unit Test.
 
-4.       Have you ever worked with multi server application?
+4.  Have you ever worked with multi server application?
 
-5.       In ASP.NET which framework are you using? Are you publish or copy pasting the profile?
+5.  In ASP.NET which framework are you using? Are you publish or copy pasting the profile?
 
-6.       Have you fixed any security and vulnerability for your application?
+6.  Have you fixed any security and vulnerability for your application?
 
-7.       Which of the following is used to check the validity of the model in Web API?
+7.  Which of the following is used to check the validity of the model in Web API?
 
-a.       Model.Valid
+a.  Model.Valid
 
-b.       Model.IsValid
+b.  Model.IsValid
 
-c.       ModelState.IsValid  (Correct Answer)
+c.  ModelState.IsValid  (Correct Answer)
 
-d.       ModelState.Valid
+d.  ModelState.Valid
 
  
 
 Additional Questions
 
-1.       What is life cycle in Angular?
+1.  What is life cycle in Angular?
 
-2.       Do you know about Dependency Injection? If yes, Explain
+2.  Do you know about Dependency Injection? If yes, Explain
 
-3.       Advantages and disadvantages of using Angular?
+3.  Advantages and disadvantages of using Angular?
 
-4.       Angular Authentication and Authorization?
+4.  Angular Authentication and Authorization?
 
-5.       What are the building blocks of Angular?
+5.  What are the building blocks of Angular?
 
-6.       What is Inheritance in JavaScript?
+6.  What is Inheritance in JavaScript?
 
-7.       What is Closer in JavaScript?
+7.  What is Closer in JavaScript?
 
-8.       What is the difference between Function and Stored procedure?
+8.  What is the difference between Function and Stored procedure?
 
-9.       How do you handle the exception in .NET/Angular?
+9.  How do you handle the exception in .NET/Angular?
 
-10.   What is a Garbage Collector?
+10. What is a Garbage Collector?
 
-11.   Which Design Patterns are you familiar with? Explain – Singleton, Factory, Abstract, Repository
+11. Which Design Patterns are you familiar with? Explain – Singleton, Factory, Abstract, Repository
 
-12.   Four pillars of OOPS – Abstraction – Inheritance – Polymorphisms – Encapsulation
+12. Four pillars of OOPS – Abstraction – Inheritance – Polymorphisms – Encapsulation
 
-13.   What is the type of indexes? – Cluster index and Non-Cluster Index
+13. What is the type of indexes? – Cluster index and Non-Cluster Index
