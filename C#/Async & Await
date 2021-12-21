@@ -1,0 +1,13 @@
+  Async
+
+An async method is a method that returns to the calling method before completing all its work, and then completes its work while the calling method continues its execution.
+o	An async method must have the async keyword in its method header, and it must be before the return type.
+o	Async method must have one or more await expression. this expression is a task which runs asynchronously.
+o  It must have one or more return type
+  o Void - return nothing.
+  o Task - it doesn't return any type but return's the state of the method.
+  o Task<T> - it return's the type T as well as the state of method.
+o It does not contain out or ref parameter.
+o	Other than Methods, lambda expressions and anonymous methods can also act as async objects.
+
+
