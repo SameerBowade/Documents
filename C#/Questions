@@ -16,13 +16,13 @@ OOPS
 
 1.       Explicitly implement interface. I have class A, I have interface B and C, both interfaces have same method XYZ – now I want to implement B and C in A.
 
-As. By specifying interface name before method
+    Answer. By specifying interface name before method
 
 2.       When should we use interface and when should we use abstract class?
 
 3.       What is difference between Abstract class and interface?
 
-https://www.c-sharpcorner.com/article/when-to-use-abstract-class-and-interface-in-real-time-projects/
+    Answer. https://www.c-sharpcorner.com/article/when-to-use-abstract-class-and-interface-in-real-time-projects/
 
 4.       Where exactly have you implement multiple inheritance?
 
@@ -46,7 +46,7 @@ https://www.c-sharpcorner.com/article/when-to-use-abstract-class-and-interface-i
 
 14.   Let’s say You have developed ASP.NET standard web application and deployed to sever and, I know you developed in Web.conflict file its is a root folder and I am trying to access ABC.com/web.conflict then what will happen?
 
-IIS will not allow you do open it through a browser assuming you are accessing it remotely.  This is definately due to security because connection string and application specific information is usually stored in the web.config file.
+    Answer. IIS will not allow you do open it through a browser assuming you are accessing it remotely.  This is definately due to security because connection string and application specific information is usually stored in the web.config file.
 
 15.   Do you know why ISS is blocking web.conflict? Can I have multiple web.conflict file in project? If do have any any. conflict file what will happen?
 
@@ -124,7 +124,7 @@ IIS will not allow you do open it through a browser assuming you are accessing i
 
 52.   How many static constructors are allowed in a class?
 
-Ans: one.
+    Answer. one.
 
 53.   Which feature can be implemented using encapsulation?
 
