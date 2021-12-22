@@ -1,4 +1,4 @@
-Dispose
+**Dispose**
 Garbage collector is responsible for releasing the memory (objects) that is not being used by the application. 
 But GC has limitation that, it can reclaim or release only memory which is used by managed resources. 
 There are a couple of resources which GC is not able to release as it doesn't have information that, how to claim memory from those resources like File handlers, 
