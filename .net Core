@@ -1,0 +1,473 @@
+1.	What is the ASP.NET Core?
+ASP.NET Core is not an upgraded version of ASP.NET. ASP.NET Core is completely rewriting that work with .net Core framework. It is much faster, configurable, modular, scalable, extensible and cross-platform support. It can work with both .NET Core and .net framework via the .NET standard framework. It is best suitable for developing cloud-based such as web application, mobile application, IoT application.
+
+2.	What is .Net Core?
+.Net Core is newer version of .Net, which is cross-platform, supporting windows, MacOS, Linux and can be used in devices, cloud, and IOT scenarios.
+OR
+Dotnet Core is named “Core” as it contains the core features from the Dotnet Framework, for both the runtime and framework libraries Dotnet Core is an open-source, cross-platform, a high-performance framework for building modern, cloud-based, Internet-connected applications.
+OR
+.Net core is a modular, cross platform and open source framework that is used to build windows, web and mobile application for window, linux and other OS.
+
+3.	What is difference between ASP.NET Core and .Net Core?
+.NET Core is a runtime. It can execute applications that are built for it.
+ASP.NET Core is a collection of libraries that form a Framework for building web applications. ASP.NET Core libraries can be used on both .NET Core and the "Full .NET Framework" (which has shipped with windows for many years).
+
+4.	What are the features provided by ASP.NET Core?
+Following are the core features that are provided by the ASP.NET Core
+	Built-in supports for Dependency Injection
+	Built-in for the supports logging framework and it can be extensible
+	Introduced new, fast and cross-platform web server - Kestrel. So, a web application can run without IIS, Apache, and Nginx.
+	Multiple hosting options are available
+	It supports modularity, so the developer needs to include the module required by the application. However, .NET Core framework is also providing the meta package that includes the libraries
+	Command-line supports to create, build and run the application
+	There is no web.config file. We can store the custom configuration into an appsettings.json file
+	There is no Global.asax file. We can now register and use the services into startup class
+	It has good support for asynchronous programming
+	Support WebSocket and SignalR
+	Provide protection against CSRF (Cross-Site Request Forgery)
+
+ 
+5.	What are the advantages of ASP.NET Core over ASP.NET?
+There are following advantages of ASP.NET Core over ASP.NET :
+	It is cross-platform, so it can be run on Windows, Linux, and Mac.
+	There is no dependency on framework installation because all the required dependencies are ship with our application
+	ASP.NET Core can handle more request than the ASP.NET
+	Multiple deployment options available with ASP.NET Core
+
+6.	What are different deployment options in .net core?
+7.	Framework-dependent deployment (FDD)
+8.	Self-contained deployment (SCD)
+9.	Framework-dependent executables (FDE)
+
+10.	What is Metapackages?
+The framework .NET Core 2.0 introduced Metapackage that includes all the supported package by ASP.NET code with their dependencies into one package. It helps us to do fast development as we don't require to include the individual ASP.NET Core packages. The assembly Microsoft.AspNetCore.All is a meta package provide by ASP.NET core.
+
+11.	Can ASP.NET Core application work with full .NET 4.x Framework?
+Yes. ASP.NET core application works with full .NET framework via the .NET standard library.
+ 
+12.	What is the startup class in ASP.NET core?
+Startup class is the entry point of the ASP.NET Core application. Every .NET Core application must have this class. This class contains the application configuration related items. It is not necessary that class name must "Startup", it can be anything, we can configure startup class in Program class.
+
+  public class Program
+ {
+   public static void Main(string[] args)
+   {
+      CreateWebHostBuilder(args).Build().Run();
+   }
+ 
+ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+    .UseStartup<TestClass>();
+ }
+
+13.	What is the use of ConfigureServices method of startup class?
+OR
+14.	Where would custom Dependency Injection objects be added?
+This is an optional method of startup class. It can be used to configure the services that are used by the application. This method calls first when the application is requested for the first time. Using this method, we can add the services to the DI container, so services are available as a dependency in controller constructor.
+
+15.	What is the use of the Configure method of startup class?
+It defines how the application will respond to each HTTP request. We can configure the request pipeline by configuring the middleware. It accepts IApplicationBuilder as a parameter and also it has two optional parameters: IHostingEnvironment and ILoggerFactory. Using this method, we can configure built-in middleware such as routing, authentication, session, etc. as well as third-party middleware.
+
+16.	Where to keep configuration information in ASP.NET Core?
+Now there is no web.config file in ASP.NET Core so we have to store configuration information in appsettings.json file, which is JSON file keep information as key-pair in JSON format.
+
+17.	What is middleware?
+It is peace of code which is injected into the application pipeline to handle request and responses. The incoming requests are passes through this pipeline where all middleware is configured, and each middleware perform some action on the request before passes it to the next middleware. Same responses also pass through the middleware but in reverse order.
+
+ 
+18.	What is the difference between IApplicationBuilder.Use() and IApplicationBuilder.Run()?
+We can use both the methods in Configure methods of startup class. Both are used to add middleware delegate to the application request pipeline. The middleware adds using IApplicationBuilder.Use may call the next middleware in the pipeline whereas the middleware adds using IApplicationBuilder.Run method never calls the subsequent or next middleware. After IApplicationBuilder.Run method, system stop adding middleware in request pipeline.
+
+19.	What is the use of "Map" extension while adding middleware to ASP.NET Core pipeline? OR
+20.	How to branch the middleware pipeline?
+Map method is used for branching the pipeline. It branches the ASP.NET Core pipeline based on request path matching. If request path starts with the given path, middleware on to that branch will execute.
+ 
+ public void Configure(IApplicationBuilder app)
+ {
+    app.Map("/path1", Middleware1);
+    app.Map("/path2", Middleware2);
+ }
+
+21.	What is routing in ASP.NET Core?
+Routing is functionality that map incoming request to the route handler. The route can have values (extract them from URL) that used to process the request. Using the route, routing can find route handler based on URL. All the routes are registered in routeTable when the application is started. There are two types of routing supported by ASP.NET Core
+Or
+Routing is pattern matching mechanism, rout handler map the incoming request with routes defined in route table and process the request.
+
+	The conventional routing
+	Attribute routing
+
+The Routing uses routes for map incoming request with route handler and Generate URL that used in response. Mostly, the application having a single collection of routes and this collection are used for the process the request. The RouteAsync method is used to map incoming request (that match the URL) with available in route collection.
+
+
+22.	What is Microservices in ASP.NET Core?
+Microservices are type of API Service, that are small, modular, can be deployed independently, which can run isolated environment.
+
+23.	How to enable Session in ASP.NET Core?
+The middleware for the session is provided by the package Microsoft.AspNetCore.Session. To use the session in ASP.NET Core application, we need to add this package to csproj file and add the Session middleware to ASP.NET Core request pipeline.
+
+ public class Startup
+ {
+    public void ConfigureServices(IServiceCollection services)
+    {
+       ….
+       ….
+       services.AddSession();
+       services.AddMvc();
+    }
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+ ….
+ ….
+ app.UseSession();
+ ….
+ ….
+    }
+ }
+
+24.	 What is the purpose of Program.cs file in .NET Core project?
+.NET Core Applications are console applications. Program.cs is the entry Point for application. Like any application the execution of Application starts from public static void Main(string[] args){}
+This Program.cs creates the application Host. It configures the settings file like appsettings.json, logging using CreateDefaultBuilder(args) and Startup.cs through webBuilder.UseStartup() which further helps in building dependencies.
+25.	What are the difference between ConfigureServices and Configure Method in Startup class?
+ConfigureServices method calls runtime to register services to DI container. After registering the dependent classes, you can use those classes anywhere in the application. The ConfigureServices method includes the IServiceCollection parameter to register services to the DI container.
+Configure method calls runtime to configure the HTTP request pipeline for application. Configure method use the instance of the IApplicationBuilder that is provided by In-Build IOC container. In other words, you add the middleware in this method like routing and other custom middleware as per your application requirements
+26.	What is Kestrel?
+Kestrel is cross-platform webserver built for ASP.NET Core. It is based on asynchronous I/O library called “libuv” primarily developed for Node.js, Its default web server, but still you can use IIS, Apache, Nginx etc.
+
+27.	What is the use of UseIISIntegration?
+This tells ASP.NET that IIS will be working as a reverse proxy in front of Kestrel. As if you expose your application to the Internet, you must use IIS, Nginx, or Apache as a reverse proxy server. When you wish to deploy your ASP.NET Core application on windows, you need to tell ASP.NET Core Host to use IIS integration.
+UseKestrel and UseIISIntegration must be used in conjunction as UseKestrel creates the web server and hosts the code. UseIISIntegration specifies IIS as the reverse proxy server.
+
+var host = new WebHostBuilder()
+.UseKestrel()
+.UseContentRoot(Directory.GetCurrentDirectory())
+.UseIISIntegration()
+.UseStartup()
+.Build();
+
+28.	What is a reverse proxy server used for?
+A reverse proxy ultimately forwards user/web browser requests to web servers. However, the reverse proxy server protects the web server's identity. This type of proxy server also moves requests strategically on behalf of web servers, typically to help increase performance, security, and reliability.
+
+29.	What is WebListener?
+WebListener is a web server for ASP.NET Core that runs only on Windows. WebListener is an alternative to Kestrel that can be used for direct connection to the Internet without relying on IIS as a reverse proxy server. In fact, WebListener can't be used with IIS or IIS Express, as it isn't compatible with the ASP.NET Core Module.
+
+30.	What are the various JSON files available in ASP.NET Core?
+There are following JSON files in ASP.NET Core :
+	global.json : used to store solution level settings. 5. project: used to store project level configurations.
+	launchsettings.json: used to store profile settings to launch the application, profile specific debugging settings.
+	appsettings.json  : used to store application setting key value pairs, connection strings
+	bundleconfig.json : used to store configuration for bundling and minification of files
+	bower.json : package manager for the web. used to install right versions of files and dependencies
+	package.json
+	npm-shrinkwrap.json
+
+31.	What is launchsetting.json in ASP.NET Core?
+This json file holds project specific settings associated with each debug profile, Visual Studio is configured to use to launch the application, including any environment variables that should be used. You can define framework for your project for compilation and debugging for specific profiles. This file is placed in Properties folder. This file is only used on local development machine. We do not need it for publishing our asp.net core application.
+
+32.	What is a Host and what’s the importance of Host in ASP.NET Core application?
+The host is responsible for app startup and lifetime management. Host configure a server and a request processing pipeline. The host can also set up logging, dependency injection, and configuration.
+
+33.	What is deprecated in .NET Core?
+Features deprecated in .NET core: 
+1. Reflection 
+2. Sandboxing 
+3. Binary serialization 
+4. Remoting 
+5. AppDomain
+
+34.	What is tag helper in ASP.NET Core?
+It is a feature provided by Razor view engine that enables us to write server-side code to create and render the HTML element in view (Razor). The tag-helper is C# classes that used to generate the view by adding the HTML element. The functionality of tag helper is very similar to HTML helper of ASP.NET MVC.
+
+ Example:
+ //HTML Helper
+ @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Enter Your First Name" }) 
+ 
+ //content with tag helper
+ <input asp-for="FirstName" placeholder="Enter Your First Name" class="form-control" /> 
+ 
+ //Equivalent HTML
+ <input placeholder="Enter Your First Name" class="form-control" id="FirstName" name="FirstName" value="" type="text"> 
+
+35.	How to disable Tag Helper at element level?
+We can disable Tag Helper at element level using the opt-out character ("!"). This character must apply opening and closing the Html tag.
+Example
+ <!span asp-validation-for="phone" class="divPhone"></!span>
+
+36.	What are Razor Pages in ASP.NET Core?
+This is a new feature introduced in ASP.NET Core 2.0. It follows a page-centric development model just like ASP.NET web forms. It supports all the feature of ASP.NET Core.
+
+Example
+ @page 
+ <h1> Hello, Book Reader!</h1> 
+ <h2> This is Razor Pages </h2>
+
+The Razor pages start with the @page directive. This directive handle request directly without passing through the controller. The Razor pages may have code behind file, but it is not really code-behind file. It is class inherited from PageModel class.
+
+37.	How can we do automatic model binding in Razor pages?
+The Razor pages provide the option to bind property automatically when posted the data using BindProperty attribute. By default, it only binds the properties only with non-GET verbs. we need to set SupportsGet property to true to bind a property on getting request.
+
+Example
+ public class Test1Model : PageModel
+ {
+    [BindProperty]
+    public string Name { get; set; }
+ }
+
+38.	How can we inject the service dependency into the controller?
+There are three easy steps to add custom service as a dependency on the controller.
+
+Step 1: Create the service
+
+ public interface IHelloWorldService
+ {
+    string SaysHello();
+ }
+ 
+ public class HelloWorldService: IHelloWorldService
+ {
+    public string SaysHello()
+    {
+       return "Hello ";
+    }
+ }
+
+Step 2: Add this service to Service container (service can either added by singleton, transient or scoped)
+
+ public void ConfigureServices(IServiceCollection services)
+ {
+    ….
+    …
+    services.AddTransient<IHelloWorldService, HelloWorldService>();
+    …
+    …
+ }
+
+Step 3: Use this service as a dependency in the controller
+
+ public class HomeController: Controller
+ {
+    IHelloWorldService _helloWorldService;
+    public HomeController(IHelloWorldService helloWorldService)
+    {
+       _helloWorldService = helloWorldService;
+    }
+ }
+
+39.	How to specify service lifetime for register service that added as a dependency?
+ASP.NET Core allows us to specify the lifetime for registered services. The service instance gets disposed of automatically based on a specified lifetime. So, we do not care about the cleaning these dependencies, it will take care by ASP.NET Core framework. There are three types of lifetimes.
+
+Singleton
+ASP.NET Core will create and share a single instance of the service through the application life. The service can be added as a singleton using AddSingleton method of IServiceCollection. ASP.NET Core creates service instance at the time of registration and subsequence request use this service instance. Here, we do not require to implement Singleton design pattern and single instance maintained by the ASP.NET Core itself.
+Example:   services.AddSingleton<IHelloWorldService, HelloWorldService>();
+
+Transient (it creates number of instances of service based on how many time it is injected to controller)
+ASP.NET Core will create an instance of the service every time to the application when we ask for it. The service can be added as Transient using AddTransient method of IServiceCollection. This lifetime can be used in stateless service. It is a way to add lightweight service.
+Example:  services.AddTransient<IHelloWorldService, HelloWorldService>();
+
+Scoped (it creates only one instance of service no matter how many times it is injected to controller)
+ASP.NET Core will create and share an instance of the service per request to the application. It means that a single instance of service available per request. It will create a new instance in the new request. The service can be added as scoped using an AddScoped method of IServiceCollection. We need to take care while, service registered via Scoped in middleware and inject the service in the Invoke or InvokeAsync methods. If we inject dependency via the constructor, it behaves like singleton object.
+
+Example: services.AddScoped<IHelloWorldService, HelloWorldService>();
+
+
+40.	How to Handle logging in .Net core applications?
+There is Microsoft.Extensions.Logging  logging API package ASP.NET Core application, we need to install it form NuGet package and one or more logging providers of our choice.
+The Logging API does not work as standalone. It works with one or more logging providers that store or display logs to a particular medium.
+Built-in logging providers:
+1.	Microsoft.Extensions.Logging.Console
+2.	Microsoft.Extensions.Logging.Debug
+3.	Microsoft.Extensions.Logging.EventSource
+4.	Microsoft.Extensions.Logging.TraceSource
+Third party logging providers:
+1.	Elmah.io
+2.	NLog
+3.	Log4Net
+4.	Serilog
+
+41.	How to store log in text file?
+To store logs in a file, install the NuGet package Serilog.Extensions.Logging.File. Serillog includes an extension method for ILoggerFactory.
+Go to the Startup.cs file and add the ILoggerFactory parameter in the Configure() method. Then, call the AddFile() extension method to add Serillog file provider, as shown below.
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) 
+{
+    // other code remove for clarity 
+    loggerFactory.AddFile("Logs/mylog-{Date}.txt");
+}
+
+public class HomeController : Controller
+{
+        private readonly ILogger _logger;
+
+        public HomeController(ILogger<HomeController> logger){
+            _logger = logger;
+        }
+        
+        public IActionResult Index()
+        {
+            _logger.LogInformation("Log message in the Index() method");
+
+            return View();
+        }
+}
+
+42.	How to add custom middleware in ASP.NET core application pipeline?
+The custom middleware component is like any other .NET class with Invoke() method. However, in order to execute next middleware in a sequence, it should have RequestDelegate type parameter in the constructor.
+
+// You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
+public class MyMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public MyMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task Invoke(HttpContext httpContext)
+    {
+      // Custom logic goes here
+        await _next(httpContext); // calling next middleware
+    }
+}
+
+// Extension method used to add the middleware to the HTTP request pipeline.
+public static class MyMiddlewareExtensions
+{
+    public static IApplicationBuilder UseMyMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<MyMiddleware>();
+    }
+} 
+
+You need to add our custom middleware in the request pipeline by using your extension method
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseMyMiddleware();
+
+    app.Run(async (context) =>
+    {
+        await context.Response.WriteAsync("Hello World!");
+    });
+}
+
+43.	How to Configure the Default File to be Served on the Root Request?
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+        DefaultFilesOptions options = new DefaultFilesOptions();
+        options.DefaultFileNames.Clear();
+        options.DefaultFileNames.Add("home.html");
+        app.UseDefaultFiles(options);
+
+        app.UseStaticFiles();
+
+}
+
+44.	What is wwwroot folder in Asp.Net Core?
+Its web root folder, stores static files, any folder under the root folder accessed with relative path to that root. You can rename the wwwroot folder 
+You need to include a middleware for serving static files in the Configure method of Startup.cs.
+
+45.	How to serve Static files in ASP.NET Core?
+OR
+Static file Middleware:
+ASP.NET Core application cannot serve static files by default. We must include Microsoft.AspNetCore.StaticFiles middleware in the request pipeline.
+By default, all the static files of a web application should be located in the web root folder wwwroot
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        app.UseStaticFiles();
+
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync("Hello World");
+        });
+    }
+you want to serve files from the outside of web root folder (wwwroot) using StaticFileOptions parameter in the UseStaticFiles method 
+
+app.UseStaticFiles(new StaticFileOptions()
+    {
+        FileProvider = new PhysicalFileProvider(
+                            Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
+                            RequestPath = new PathString("/app-images")
+    });
+
+DefaultFile Middleware: To serve default.html on the root request http://localhost:<port>, call UseDefaultFiles() method before UseStaticFiles() in the Configure method
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseDefaultFiles();
+    app.UseStaticFiles();
+
+    app.Run(async (context) =>
+    {
+            await context.Response.WriteAsync("Hello World");
+    });
+}
+
+FileServer middleware: Its combines the functionalities of UseDefaultFiles and UseStaticFiles middlware
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseFileServer();
+
+    app.Run(async (context) =>
+    {
+        await context.Response.WriteAsync("Hello World");
+    });
+}
+
+
+46.	How to handle Error/Exception in ASP.Net core?
+To handle exceptions and display user friendly messages, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method.
+The Microsoft.AspNetCore.Diagnostics package includes following extension methods to handle exceptions in different scenario:
+1.	UseDeveloperExceptionPage: The UseDeveloperExceptionPage extension method adds middleware into the request pipeline which displays developer friendly exception detail page. This helps developers in tracing errors that occur during development phase.
+As this middleware displays sensitive information, it is advisable to add it only in development environment.
+
+2.	UseExceptionHandler: In MVC Core application, we might want some other controller to handle all exceptions and display custom user-friendly error messages. The UseExceptionHandler extension method allows us to configure custom error handling route. This is useful when an application runs under production environment.
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+        if (env.IsDevelopment() || env.IsStaging())
+        {
+            	app.UseDeveloperExceptionPage();
+        }
+	else 
+       {
+         //This error page will display on Prod environment
+ //We can log this exception in text files using third   party   logging providers in try catch block.
+	 app.UseExceptionHandler("/Home/Error");
+         }
+ }
+Visual Studio automatically creates Error.cshtml under Home folder when you create ASP.NET Core project with MVC template.
+
+47.	How to stop request pipeline in middleware?
+The next parameter represents the next delegate in the pipeline. You can stop the pipeline by not calling the next parameter.
+
+48.	Can we use Attribute routing and convention base routing at same time in application?
+We can use Convention based Routing and Attribute Routing in the same project. Be sure attribute routing should be defined first to convention-based routing.
+
+49.	Can we define multiple routes for same action method?
+Yes, We can use multiple URLs to the same action with the use of a routing table.
+
+50.	Difference in Temp data and View Data or View Bag.
+ViewBag and ViewData are used to pass the data from Controller action to View and TempData is used to pass the data from action to another action or one Controller to another Controller.
+
+51.	What is DB Context pool?
+AddDbContextPool enables a pool for reusable context instances. To use context pooling, use the AddDbContextPool method instead of AddDbContext during service registration.
+
+52.	Where we implement this DB Context polling
+It’s used in configureService method of startup.cs class
+services.AddDbContextPool<BloggingContext>(
+        options => options.UseSqlServer(connectionString));   
+
+53.	Where you do .Net core web application hosting?
+1.	Creating Azure Container Instance, we can deploy docker images from docker container registry (cost effective way of deployment compared to app service).
+2.	Creating web app in app service, we can deploy code or docker images from docker container registry.
+
+54.	What if token expire while consuming third party API in your application?
+Read refresh token concept.
+Short Answer is -->
+Refresh tokens are the credentials that can be used to acquire new access tokens. The lifetime of a refresh token is much longer compared to the lifetime of an access token. ... When current access tokens expire or become invalid, the authorization server provides refresh tokens to the client to obtain new access token.
+If refresh token is not implemented then, Users will to be redirected to login page to login again so token will regenerate.
+
+.Net core Life Cycle
+.Net core user Authentication 
+.Net Core microservices
