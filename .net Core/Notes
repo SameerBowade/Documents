@@ -89,7 +89,8 @@ OR
 
 17.	What is middleware?
   It is peace of code which is injected into the application pipeline to handle request and responses. 
-  The incoming requests are passes through this pipeline where all middleware is configured, and each middleware perform some action on the request before passes it to the next middleware. Same responses also pass through the middleware but in reverse order.
+  The incoming requests are passes through this pipeline where all middleware is configured, and each middleware perform some action on the request before passes it to 
+  the next middleware. Same responses also pass through the middleware but in reverse order.
 
  
 18.	What is the difference between IApplicationBuilder.Use() and IApplicationBuilder.Run()?
@@ -423,28 +424,33 @@ Example: services.AddScoped<IHelloWorldService, HelloWorldService>();
 45.	How to serve Static files in ASP.NET Core?
 OR
   Static file Middleware:
-  ASP.NET Core application cannot serve static files by default. We must include Microsoft.AspNetCore.StaticFiles middleware in the request pipeline.
-  By default, all the static files of a web application should be located in the web root folder wwwroot
+         ASP.NET Core application cannot serve static files by default. We must include Microsoft.AspNetCore.StaticFiles middleware in the request pipeline.
+  By default, all the static files of a web application should be located in the "wwwroot" folder.
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
       {
-          app.UseStaticFiles();
+          app.UseStaticFiles();  // this middleware is required to enable the access of static file.
 
           app.Run(async (context) =>
           {
               await context.Response.WriteAsync("Hello World");
           });
       }
-  you want to serve files from the outside of web root folder (wwwroot) using StaticFileOptions parameter in the UseStaticFiles method 
+  
+  If you want to serve files from the outside of web root folder (wwwroot) using then you have to use StaticFileOptions parameter in the UseStaticFiles method like below
 
   app.UseStaticFiles(new StaticFileOptions()
       {
           FileProvider = new PhysicalFileProvider(
-                              Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
-                              RequestPath = new PathString("/app-images")
+                              Path.Combine(Directory.GetCurrentDirectory(), @"Images")),   // to use ths "Image" folder for static files
+                              RequestPath = new PathString("/app-images")   // this is optional, use to provide alternate name of folder so can be access by "app-images" 
+                                                                            // insted of actual "Image" folder name
       });
 
-  DefaultFile Middleware: To serve default.html on the root request http://localhost:<port>, call UseDefaultFiles() method before UseStaticFiles() in the Configure method
+  
+  DefaultFile Middleware: 
+             To serve default.html on the root request http://localhost:<port>, call UseDefaultFiles() method before UseStaticFiles() in the Configure method
+  
   public void Configure(IApplicationBuilder app, IHostingEnvironment env)
   {
       app.UseDefaultFiles();
@@ -456,7 +462,9 @@ OR
       });
   }
 
-  FileServer middleware: Its combines the functionalities of UseDefaultFiles and UseStaticFiles middlware
+  FileServer middleware: 
+             Its combines the functionalities of UseDefaultFiles and UseStaticFiles middlware
+  
   public void Configure(IApplicationBuilder app, IHostingEnvironment env)
   {
       app.UseFileServer();
@@ -471,11 +479,14 @@ OR
 46.	How to handle Error/Exception in ASP.Net core?
   To handle exceptions and display user friendly messages, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method.
   The Microsoft.AspNetCore.Diagnostics package includes following extension methods to handle exceptions in different scenario:
-  1.	UseDeveloperExceptionPage: The UseDeveloperExceptionPage extension method adds middleware into the request pipeline which displays developer friendly exception detail page. 
+  
+  1.	UseDeveloperExceptionPage: 
+                The UseDeveloperExceptionPage extension method adds middleware into the request pipeline which displays developer friendly exception detail page. 
     This helps developers in tracing errors that occur during development phase.
     As this middleware displays sensitive information, it is advisable to add it only in development environment.
 
-  2.	UseExceptionHandler: In MVC Core application, we might want some other controller to handle all exceptions and display custom user-friendly error messages. 
+  2.	UseExceptionHandler: In
+                MVC Core application, we might want some other controller to handle all exceptions and display custom user-friendly error messages. 
     The UseExceptionHandler extension method allows us to configure custom error handling route. This is useful when an application runs under production environment.
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -503,7 +514,53 @@ OR
   Yes, We can use multiple URLs to the same action with the use of a routing table.
 
 50.	Difference in Temp data and View Data or View Bag.
-  ViewBag and ViewData are used to pass the data from Controller action to View and TempData is used to pass the data from action to another action or 
+   ViewData: it is used to pass the data from Controller action to View.
+            it is a type of Dictionary.
+            To fetch value from the ViewData casting is required.
+            Derives from ViewDataDictionary, so it has dictionary properties that can be useful, such as ContainsKey, Add, Remove, and Clear.
+            
+   ViewBag: it is used to pass value from controller to view. 
+            it is a wrapper around the viewData.
+            it is a type of Dynamic.
+            Simpler to check for null values. Example: @ViewBag.Person?.Name
+   
+   [ViewData] attribute:
+     It is same as ViewData 
+     
+         [ViewData]
+         public string Title { get; set; }
+
+         public IActionResult About()
+         {
+             Title = "About Us";
+             ViewData["Message"] = "Your application description page.";
+
+             return View();
+         }
+
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <title>@ViewData["Title"] - WebApplication</title>
+             ...
+
+     ViewData and ViewBag both sharing same data. so if you add the name key into the ViewData then you can fetch the value of name from ViewBag also. 
+        @{
+           Layout = "/Views/Shared/_Layout.cshtml";
+           ViewBag.Title = "About Contoso";
+           ViewData["Description"] = "Let us tell you about Contoso's philosophy and mission.";
+        }
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>@ViewData["Title"]</title>
+            <meta name="description" content="@ViewBag.Description">
+            ...
+    
+    
+
+  TempData is used to pass the data from action to another action or 
   one Controller to another Controller.
 
 51.	What is DB Context pool?
