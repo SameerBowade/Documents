@@ -33,6 +33,13 @@ Creating Dispose
 To implement Dispose method for your custom class, you need to implement IDisposable interface. 
 IDisposable interface expose Dispose method where code will be written to release unmanaged resource.
 
+If you call System.GC.SuppressFinalize(anyinstance); in dipose method then GC destroes the object in the same cycle and do not call the finalize method in next cycle.
+
+ public void Dispose() // helper finalize function
+    {
+        // here you can free the resources you allocated explicitly
+        System.GC.SuppressFinalize(this);
+    }
 
 Finalize
 
