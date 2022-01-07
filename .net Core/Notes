@@ -21,8 +21,8 @@ OR
 4.	What are the features provided by ASP.NET Core?
 Following are the core features that are provided by the ASP.NET Core
   	Built-in supports for Dependency Injection
-  	Built-in for the supports logging framework and it can be extensible
-  	Introduced new, fast and cross-platform web server - Kestrel. So, a web application can run without IIS, Apache, and Nginx.
+  	Built-in supports for logging framework
+  	Introduced new, fast and cross-platform web server - Kestrel. So, a web application can run with IIS as well as Apache, and Nginx.
   	Multiple hosting options are available
   	It supports modularity, so the developer needs to include the module required by the application. 
     However, .NET Core framework is also providing the meta package that includes the libraries.
