@@ -41,15 +41,30 @@ There are following advantages of ASP.NET Core over ASP.NET :
   	ASP.NET Core can handle more request than the ASP.NET
   	Multiple deployment options available with ASP.NET Core
 
-6.	What are different deployment options in .net core?
-7.	Framework-dependent deployment (FDD)
-8.	Self-contained deployment (SCD)
-9.	Framework-dependent executables (FDE)
+6.	What are different deployment modes in .net core?
+     Framework-dependent deployment (FDD)
+     Self-contained deployment (SCD)
+     Framework-dependent executables (FDE)
+
+7.	Framework-dependent deployment (FDD)  -- framework-dependent deployment mode applications are completely dependent upon the .NET Core 
+                                            installed on the target machine where you want to deploy your app.
+                                            
+8.	Self-contained deployment (SCD)       -- Self-contained deployment (SCD) does not use the common .NET Core install on the server. 
+                                            The final application build contains all the app-specific code and its dependencies along with .NET Core libraries 
+                                            and .NET Core runtime. 
+                                            In this mode, it is not necessary to have .NET Core runtime install on the servers.
+                                            
+9.	Framework-dependent executables (FDE) -- This mode is included form .NET Core 2.2. It is exactly same as FDD but this mode produces the executable 
+                                            that can be run on any target machine. In this mode, we are not using dotnet utility to run our app.
+
 
 10.	What is Metapackages?
   The framework .NET Core 2.0 introduced Metapackage that includes all the supported package by ASP.NET code with their dependencies into one package. 
   It helps us to do fast development as we don't require to include the individual ASP.NET Core packages. 
   The assembly Microsoft.AspNetCore.All is a meta package provide by ASP.NET core.
+  This meta package is declare inside the .csproj file.
+  From .Net Core 3.0 Metapackage was removed. so in this case it directly include all the file which are present in the soluction project folder.
+  
 
 11.	Can ASP.NET Core application work with full .NET 4.x Framework?
 Yes. ASP.NET core application works with full .NET framework via the .NET standard library.
@@ -100,9 +115,11 @@ OR
 
 19.	What is the use of "Map" extension while adding middleware to ASP.NET Core pipeline? OR
 20.	How to branch the middleware pipeline?
-  Map method is used for branching the pipeline. It branches the ASP.NET Core pipeline based on request path matching. 
-  If request path starts with the given path, middleware on to that branch will execute.
- 
+  If we want to add/insert some middleware logic for specific url then we have to use this app.Map() method.
+  Map method is used for branching the pipeline. 
+  It creates a branch of the ASP.NET Core pipeline, based on request path matching. 
+  If request path starts with the given path, middleware on to that branch will execute. If path is not matching then this middleware will not execute.
+
  public void Configure(IApplicationBuilder app)
  {
     app.Map("/path1", Middleware1);
@@ -123,6 +140,20 @@ Or
   Mostly, the application having a single collection of routes and this collection are used for the process the request. 
   The RouteAsync method is used to map incoming request (that match the URL) with available in route collection.
 
+     // Before using this UseEndpoints routing middleware we must use the UseRouting middleware.
+   app.UseRouting();       
+   
+   app.UseEndpoints( endpoints=> {
+     endpoints.Map("/", async context =>
+      {
+       awaits context.Responce.WriteAsync("Hello Sameer!");
+      });
+    });
+    
+    Map() method entertain all the request.
+    MapGet() method entertain only Get request.
+    
+    
 
 22.	What is Microservices in ASP.NET Core?
 Microservices are type of API Service, that are small, modular, can be deployed independently, which can run isolated environment.
@@ -300,19 +331,20 @@ Step 3: Use this service as a dependency in the controller
   So, we do not care about the cleaning these dependencies, it will take care by ASP.NET Core framework. There are three types of lifetimes.
 
 Singleton
-  ASP.NET Core will create and share a single instance of the service through the application life. 
+  ASP.NET Core will create and share a single instance of the service throughout the application life. 
   The service can be added as a singleton using AddSingleton method of IServiceCollection. 
   ASP.NET Core creates service instance at the time of registration and subsequence request use this service instance. 
   Here, we do not require to implement Singleton design pattern and single instance maintained by the ASP.NET Core itself.
 Example:   services.AddSingleton<IHelloWorldService, HelloWorldService>();
 
   Transient (it creates number of instances of service based on how many time it is injected to controller)
-  ASP.NET Core will create an instance of the service every time to the application when we ask for it. 
+  ASP.NET Core will create an instance of the service every time to the application when we ask for it.
   The service can be added as Transient using AddTransient method of IServiceCollection. This lifetime can be used in stateless service. 
   It is a way to add lightweight service.
   Example:  services.AddTransient<IHelloWorldService, HelloWorldService>();
 
   Scoped (it creates only one instance of service no matter how many times it is injected to controller)
+  Object is created for every request. if request is same and the application access the object again then the same object is given.
   ASP.NET Core will create and share an instance of the service per request to the application. It means that a single instance of service available per request. 
   It will create a new instance in the new request. The service can be added as scoped using an AddScoped method of IServiceCollection. 
   We need to take care while, service registered via Scoped in middleware and inject the service in the Invoke or InvokeAsync methods. 
@@ -322,6 +354,7 @@ Example: services.AddScoped<IHelloWorldService, HelloWorldService>();
 
 
 40.	How to Handle logging in .Net core applications?
+     https://www.youtube.com/watch?v=oXNslgIXIbQ
   There is Microsoft.Extensions.Logging  logging API package ASP.NET Core application, we need to install it form NuGet package and one or more logging providers of our choice.
   The Logging API does not work as standalone. It works with one or more logging providers that store or display logs to a particular medium.
   Built-in logging providers:
