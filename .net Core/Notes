@@ -592,9 +592,15 @@ OR
             ...
     
     
+TemData
+  TempData is used to pass the data from action to another action or one Controller to another Controller.
+  TempData store the value temproraly and remove it after the use. if you want to keep the value for next call then use the Keep method
+  Peek() method used to return the value of the specific key and does not mark for the deletion. 
+  
+       TempData.Keep("name"); // Marks the specified key in the TempData for retention.
+       TempData.Keep(); // Marks all keys in the TempData for retention
+       string name =  TempData.Peek("name").ToString();
 
-  TempData is used to pass the data from action to another action or 
-  one Controller to another Controller.
 
 51.	What is DB Context pool?
   AddDbContextPool enables a pool for reusable context instances. To use context pooling, use the AddDbContextPool method instead of AddDbContext during service registration.
@@ -611,7 +617,8 @@ OR
 54.	What if token expire while consuming third party API in your application?
   Read refresh token concept.
   Short Answer is -->
-  Refresh tokens are the credentials that can be used to acquire new access tokens. The lifetime of a refresh token is much longer compared to the lifetime of an access token. ... When current access tokens expire or become invalid, the authorization server provides refresh tokens to the client to obtain new access token.
+  Refresh tokens are the credentials that can be used to acquire new access tokens. The lifetime of a refresh token is much longer compared to the lifetime of an access token. 
+  ... When current access tokens expire or become invalid, the authorization server provides refresh tokens to the client to obtain new access token.
   If refresh token is not implemented then, Users will to be redirected to login page to login again so token will regenerate.
 
 .Net core Life Cycle
