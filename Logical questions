@@ -1,0 +1,49 @@
+
+ 1. Given a Binary Search Tree, write a program to print the kth smallest element without using any static/global variable. You can’t pass the value k to any function also.
+
+2. What are the 4 basics of OOP?
+
+3. Define Data Abstraction. What is its importance?
+
+4. Given an array of size n. It contains numbers in the range 1 to n. Each number is present at least once except for 2 numbers. Find the missing numbers.
+
+5. Given an array of size n. It contains numbers in the range 1 to n. Find the numbers which aren’t present.
+
+6. Given a string,find the first un-repeated character in it? Give some test cases
+
+7. You are given a dictionary of all valid words. You have the following 3 operations permitted on a word: delete a character, insert a character, replace a character. 
+      Now given two words - word1 and word2 - find the minimum number of steps required to convert word1 to word2. (one operation counts as 1 step.)
+
+8. Given a cube of size n*n*n (i.e made up of n^3 smaller cubes), find the number of smaller cubes on the surface. Extend this to k-dimension.
+
+9. What is a C array and illustrate the how is it different from a list.
+
+10. What is the time and space complexities of merge sort and when is it preferred over quick sort?
+
+11. Write a function which takes as parameters one regular expression(only ? and * are the special characters) and a string and returns whether the string matched the regular expression.
+
+12. Given n red balls and m blue balls and some containers, how would you distribute those balls among the containers such that the probability of picking a red ball is maximized, assuming that the user randomly chooses a container and then randomly picks a ball from that.
+
+13. Find the second largest element in an array with minimum no of comparisons and give the minimum no of comparisons needed on an array of size N to do the same.
+
+14. Given an array of size n, containing every element from 1 to n+1, 
+except one. Find the missing element.
+
+15. How do you convert a decimal number to its hexa-decimal equivalent.Give a C code to do the same
+
+16. Explain polymorphism. Provide an example.
+
+17. Given an array all of whose elements are positive numbers, find the maximum sum of a subsequence with the constraint that no 2 numbers in the sequence should be adjacent in the array. So 3 2 7 10 should return 13 (sum of 3 and 10) or 3 2 5 10 7 should return 15 (sum of 3, 5 and 7)
+
+18. You are given some denominations of coins in an array (int denom[])and infinite supply of all of them. Given an amount (int amount), find the minimum number of coins required to get the exact amount. What is the method called?
+
+19. Given an array of size n. It contains numbers in the range 1 to n. Each number is present at least once except for 1 number. Find the missing number.
+
+20. write program to swap 2 variables without using extra memory.
+21. A string of alphanumeric is there.Find a string that starts with b and ends with 3 characters.
+22.There is a sorted array which is of very large size.In that all except one no. are repeated once.How to find that non repeated no.
+23.There are 2 linked lists.Those 2 lists are meeting at a point.How to find that meeting point.
+
+
+
+ 
