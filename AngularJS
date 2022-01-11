@@ -2,9 +2,12 @@ Question 1: What is AngularJS?
 
 Answer
 
-AngularJS has been introduced by the giant, Google. It is a framework that helps you to create dynamic Web apps. Normally, AngularJS uses HTML as the backbone. AngularJS creates extended HTML tags that can be used as normal HTML tags. These tags will help you to write an efficient code. The interesting fact is that you can reduce the lines of code  you may need to write when you use normal JavaScript.
+AngularJS has been introduced by the giant, Google. It is a framework that helps you to create dynamic Web apps. Normally, AngularJS uses HTML as the backbone. 
+AngularJS creates extended HTML tags that can be used as normal HTML tags. These tags will help you to write an efficient code. 
+The interesting fact is that you can reduce the lines of code  you may need to write when you use normal JavaScript.
 
-AngularJS is an open-source JavaScript framework developed by Google. It is a structural framework for dynamic Web apps. It is easy to update and get information from your HTML document. It helps in writing a proper maintainable architecture, that can be tested at a client side code.
+AngularJS is an open-source JavaScript framework developed by Google. It is a structural framework for dynamic Web apps. 
+It is easy to update and get information from your HTML document. It helps in writing a proper maintainable architecture, that can be tested at a client side code.
 •	This framework is developed on MVC (Model-View-Controller) design pattern.
 •	It provides full featured SPA (Single Page Application) framework.
 •	It supports Dependency Injection.
@@ -22,11 +25,13 @@ Let's start using AngularJS. What would be the first step that you need to do? T
 
 For more details, click the link
 •	Basics of AngularJS
+
 Question 2: Explain Directives in AngularJS?
 
 Answer
 
-AngularJS directives are only used to extend HTML and DOM elements' behavior. These are the special attributes, that start with ng- prefix, that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element.
+AngularJS directives are only used to extend HTML and DOM elements' behavior. These are the special attributes, that start with ng- prefix, 
+that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element.
 
 AngularJS has a set of built-in directives like
 •	ngBind,
@@ -35,23 +40,30 @@ AngularJS has a set of built-in directives like
 •	ngApp
 •	ngInit
 •	ngRepeat
-We can create our own directives for Angular to use them in our AngularJS Application with the controllers and services too. In this article, we’ll learn about some most important built-in directives like: ng-app, ng-init, ng-model, ng-bind and ng-repeat.
+We can create our own directives for Angular to use them in our AngularJS Application with the controllers and services too. 
+There are some most important built-in directives like: ng-app, ng-init, ng-model, ng-bind and ng-repeat.
 
 ng-app
 
-It is the most important directive for an Angular Application, which is used to indicate starting of an Angular Application to AngularJS HTML compiler ($compile), like a “Main()” function in any compile time language like C#, Java or C++ etc. If we do not use this directive first and directly try to write other directives, it gives an error.
+It is the most important directive for an Angular Application, which is used to indicate starting of an Angular Application to AngularJS HTML compiler ($compile), 
+like a “Main()” function in any compile time language like C#, Java or C++ etc. 
+If we do not use this directive first and directly try to write other directives, it gives an error.
 
 ng-init
 
-ng-init directive is used to initialize an AngularJS Application data variable's inline statement, so that we can use those in the specified block where we declare them. It is like a local member of that ng-app and it can be a value or a collection of the values and as an array, it directly supports JSON data.
+ng-init directive is used to initialize an AngularJS Application data variable's inline statement, so that we can use those in the specified block where we declare them. 
+It is like a local member of that ng-app and it can be a value or a collection of the values and as an array, it directly supports JSON data.
 
 ng-model
 
-ng-model directive is used to define the model/variables value to be used in AngularJS Application’s HTML controls like <input type=’text’/> and it also provides two-way binding behavior with the model value. In some cases, it’s also used for databinding.
+it provides two-way binding behavior with the model value.
+ng-model directive is used to define the model/variables value to be used in AngularJS Application’s HTML controls like <input type=’text’/>. 
+In some cases, it’s also used for databinding.
 
 ng-bind
 
-ng-bind directive is also used to bind the model/variable's value to AngularJS Applications HTML controls as well as with HTML tags attributes like: <p/>, <span/> and more, but it does not support two way binding. We can just see the output of the model values.
+ng-bind directive is also used to bind the model/variable's value to AngularJS Applications HTML controls as well as with HTML tags attributes 
+like: <p/>, <span/> and more, but it does not support two way binding. We can just see the output of the model values.
 
 ng-repeat
 
@@ -59,13 +71,16 @@ ng-repeat directive is used to repeat HTML statements. Ng-repeat works the same 
 
 For more details, click the link
 •	What Are Directives In AngularJS: Part Three
-Question 3: What are expressions in AngularJS? 
 
+Question 3: What are expressions in AngularJS? 
 Answer
 
-Expressions in AngularJS are just like JavaScript code snippets. JavaScript code is usually written inside double braces: {{expression}}. In other words, Angular Expressions are JavaScript code snippets with limited sub-set. Expressions are included in the HTML elements. 
+Expressions in AngularJS are just like JavaScript code snippets. JavaScript code is usually written inside double braces: {{expression}}. 
+In other words, Angular Expressions are JavaScript code snippets with limited sub-set. Expressions are included in the HTML elements. 
 
-Like JavaScript expressions, AngularJS expressions can also have various valid expressions. We can use the operators between numbers and strings, literals, objects and arrarys inside the expression {{ }}. For example,
+Like JavaScript expressions, AngularJS expressions can also have various valid expressions. 
+We can use the operators between numbers and strings, literals, objects and arrarys inside the expression {{ }}. 
+For example,
 •	{{ 2 + 2 }} (numbers)
 •	{{Name + " " + email}} (string)
 •	{{ Country.Name }} (object)
@@ -85,11 +100,12 @@ Example
 10.	</div>  
 For more details click on the link
 •	Expressions In AngularJS
-Question 4: Explain currency filter in AngularJS
 
+Question 4: Explain currency filter in AngularJS
 Answer
 
-One of the filters in AngularJS is the Currency Filter. This “currency” filter includes the “$” Dollar Symbol as the default. So we can use the following code as the html template format of Currency Filter. 
+One of the filters in AngularJS is the Currency Filter. This “currency” filter includes the “$” Dollar Symbol as the default. 
+So we can use the following code as the html template format of Currency Filter. 
 
 {{ currency_expression | currency : symbol : fractionSize}} 
 
@@ -112,13 +128,17 @@ E.g. - For Example If we want to define Indian Currency Symbol then we have to u
 Indian Currency {{amount | currency:"&# 8377"}}
 For more details click on the link
 •	Currency Filter In AngularJS
-Question 5: What is $scope in AngularJS?
 
+
+Question 5: What is $scope in AngularJS?
 Answer 
 
-$scope in AngularJS is an object which refers to an application model. It is an object that binds view (DOM element) with the controller. In controller, model data is accessed via $scope object. As we know, AngularJS supports MV* pattern, $scope object becomes the model of MV*. 
+$scope in AngularJS is an object which refers to an application model. It is an object that binds view (DOM element) with the controller. 
+In controller, model data is accessed via $scope object. As we know, AngularJS supports MV* pattern, $scope object becomes the model of MV*. 
 
-The $scope is a special JavaScript object. Both View and controller have access to the scope object. It can be used for communication between view and controller. Scope object contains both data and functions. Every AngularJS application has a $rootScope that is the top most scope created on the DOM element which contains the ng-app directive. It can watch expressions and propagate events. 
+The $scope is a special JavaScript object. Both View and controller have access to the scope object. It can be used for communication between view and controller. 
+Scope object contains both data and functions. Every AngularJS application has a $rootScope that is the top most scope created on the DOM element which contains 
+the ng-app directive. It can watch expressions and propagate events. 
 
  
 
@@ -129,7 +149,8 @@ Characteristics of scope object
 •	It provides context against the expression to be evaluated.
 Example
 
-In the following example, I have created three controllers: parentController, firstChildController and secondChildController and defined one property in each controller; parentName, level1name, and level2name respectively. Here controllers are attached with DOM elements in a nested way. 
+In the following example, I have created three controllers: parentController, firstChildController and secondChildController and defined one property in each controller; 
+parentName, level1name, and level2name respectively. Here controllers are attached with DOM elements in a nested way. 
 
 As described above, AngularJS evaluates expressions with current associated scope and then it searches in parent scope and so on until the root scope is reached.
 
@@ -176,6 +197,8 @@ TestAngularJs.html
 40.	</html>  
 For more details click on the link
 •	Scope In AngularJS
+
+
 Question 6: What is “$rootScope” in AngularJS?
 
 Answer
@@ -225,13 +248,14 @@ The following is the sample code snippet,
 34.	</html>  
 As we know, Rootscope is the top-level data container in AngularJs, we can keep any data in rootscope and read it when needed.
 
-For more details click on the link 
-•	Communication Among Controllers in AngularJS
+
 Question 7: What is SPA (Single page application) in AngularJS?
 
 Answer 
 
-Single-Page Applications (SPAs) are web applications that load a single HTML page and dynamically update that page as the user interacts with the app. SPAs use AJAX and HTML to create fluid and responsive web apps, without constant page reloads. However, this means much of the work happens on the client side, in JavaScript.
+Single-Page Applications (SPAs) are web applications that load a single HTML page and dynamically update that page as the user interacts with the app. 
+SPAs use AJAX and HTML to create fluid and responsive web apps, without constant page reloads. 
+However, this means much of the work happens on the client side, in JavaScript.
 
 A single HTML page here means UI response page from the server. The source can be ASP, ASP.NET, ASP.NET MVC, JSP and so on.
 
@@ -240,52 +264,61 @@ A single-page web application, however, is delivered as one page to the browser 
  
 
 Key Points of Single-Page Applications
-•	The application is responsive in the UI with no page flicker
-•	The Back/Forward buttons work as expected
-•	More JavaScript than actual HTML
-•	Dynamic data loading from the server-side API works with restful web service with JSON format
-•	Rich interaction among UI components
-•	Fewer data transfers from the server and most of the page processes in the UI occurs client-side.
-•	The application contains tabs and subtabs with multiple HTML containers on the click of the tabs or subtabs and the specific portions of the page that are loaded into the page (the page will be one using the application)
-•	Applications written in AngularJS are cross-browser compliant. Angular automatically handles the JavaScript code suitable for each browser.
-For more details click on the link
-•	Single Page Application and AngularJs Background
+    •	The application is responsive in the UI with no page flicker
+    •	The Back/Forward buttons work as expected
+    •	More JavaScript than actual HTML
+    •	Dynamic data loading from the server-side API works with restful web service with JSON format
+    •	Rich interaction among UI components
+    •	Fewer data transfers from the server and most of the page processes in the UI occurs client-side.
+    •	The application contains tabs and subtabs with multiple HTML containers on the click of the tabs or subtabs and the specific portions of the page that are loaded 
+       into the page (the page will be one using the application)
+    •	Applications written in AngularJS are cross-browser compliant. Angular automatically handles the JavaScript code suitable for each browser.
+       For more details click on the link
+    •	Single Page Application and AngularJs Background
+    
+    
 Question 8: How to implement routing in AngularJS?
 
 Answer
 
-Routing is a core feature in AngularJS. This feature is useful in building SPA (Single Page Application) with multiple views. In SPA application, all views are different Html files and we use Routing to load different parts of the application and it's helpful to divide the application logically and make it manageable. In other words, Routing helps us to divide our application in logical views and bind them with different controllers.
+Routing is a core feature in AngularJS. This feature is useful in building SPA (Single Page Application) with multiple views. 
+In SPA application, all views are different Html files and we use Routing to load different parts of the application and it's helpful to divide the application logically and make it manageable. In other words, Routing helps us to divide our application in logical views and bind them with different controllers.
 
  
 
 How to add routing
 
-The$routeProvider definition contained by the module is called "ngRoute". In app.js file, I have defined an angular app using “angular. Module” method. After creating module, we need to configure the routes. The "config" method is used to configure $routeProvider. Using "when" and "otherwise" method of $routeProvider, we can define the route for our AngularJS application.
-1.	var app = angular.module("AngularApp", ['ngRoute']);  
-2.	app.config(['$routeProvider',  
-3.	    function($routeProvider)  
-4.	    {  
-5.	        $routeProvider.  
-6.	        when('/page1',   
-7.	             {  
-8.	                templateUrl: 'Modules/Page1/page1.html',  
-9.	                controller: 'Page1Controller'  
-10.	            })  
-11.	            .  
-12.	        when('/page2',   
-13.	             {  
-14.	                templateUrl: 'Modules/Page2/page2.html',  
-15.	                controller: 'Page2Controller'  
-16.	            })  
-17.	            .  
-18.	        otherwise  
-19.	        ({  
-20.	            redirectTo: '/page1'  
-21.	        });  
-22.	    }  
-23.	]);  
-For more details click on the link 
-•	Routing In AngularJS
+The$routeProvider definition contained by the module is called "ngRoute". In app.js file, I have defined an angular app using “angular. Module” method. 
+After creating module, we need to configure the routes. The "config" method is used to configure $routeProvider. 
+Using "when" and "otherwise" method of $routeProvider, we can define the route for our AngularJS application.
+
+	   var app = angular.module("AngularApp", ['ngRoute']);  
+
+    app.config(['$routeProvider',  
+        function($routeProvider)  
+        {  
+            $routeProvider.  
+            when('/page1',   
+                 {  
+                    templateUrl: 'Modules/Page1/page1.html',  
+                    controller: 'Page1Controller'  
+    	            })  
+    	            .  
+    	        when('/page2',   
+    	             {  
+    	                templateUrl: 'Modules/Page2/page2.html',  
+    	                controller: 'Page2Controller'  
+    	            })  
+    	            .  
+    	        otherwise  
+    	        ({  
+    	            redirectTo: '/page1'  
+    	        });  
+    	    }  
+    	]);  
+
+
+
 Question 9: How many types of data binding in AngularJS?
 
 Answer 
@@ -301,49 +334,50 @@ Binding Directives in AngularJs
 •	ng-bind-template
 •	ng-non-bindable
 •	ng-model
-ng-bind
 
-This directive updates the text content of the specified HTML element with the value of the given expression and the text content is changing on expression changes. It is very similar to double curly markup ( {{expression }}) but less verbose.
+ng-bind
+   This directive updates the text content of the specified HTML element with the value of the given expression and the text content is changing on expression changes. 
+   It is very similar to double curly markup ( {{expression }}) but less verbose.
 
 Syntax
 1.	<ANY ELEMENT ng-bind="expression"> </ANY ELEMENT>   
-Ng-bind-html
 
-It (whatever it is) evaluates the expression and inserts the HTML content into the element in a secure way. It uses the $sanitize service, so to use this functionality, be sure that $sanitize is available.
+Ng-bind-html
+  It (whatever it is) evaluates the expression and inserts the HTML content into the element in a secure way. 
+  It uses the $sanitize service, so to use this functionality, be sure that $sanitize is available.
 
 Syntax
 
 1.	<ANY ELEMENT ng-bind-html=" expression "> </ANY ELEMENT>   
-ng-bind-template
 
-It (whatever it is) replaces the element text content with the interpolation of the template. It can contain multiple double curly markups.
+ng-bind-template
+  It (whatever it is) replaces the element text content with the interpolation of the template. It can contain multiple double curly markups.
 
 Syntax
 
 1.	<ANY ELEMENT ng-bind-template=" {{expression1}} {{expression2}} … {{expressionn}} "> </ANY ELEMENT>   
-ng-non-bindable 
 
-This (whatever "this" is) directive informs AngularJs to not compile or bind the contents of the current DOM element This element is useful when we want to display the expression but it should not be executed by AngularJs.
+ng-non-bindable 
+  This (whatever "this" is) directive informs AngularJs to not compile or bind the contents of the current DOM element This element is useful when we want to display the expression but it should not be executed by AngularJs.
 
 Syntax
 
 <ANY ELEMENT ng-non-bindable > </ANY ELEMENT> 
 
 ng-model
-
-This (whatever "this" is) directive can be bound with input, select, text area or any custom form control. It provides two-way binding. It also provides validation behavior. It also keeps the state of the control (valid/invalid, dirty/pristine, touched/untouched and so on).
+  This (whatever "this" is) directive can be bound with input, select, text area or any custom form control. It provides two-way binding. It also provides validation behavior. It also keeps the state of the control (valid/invalid, dirty/pristine, touched/untouched and so on).
 
 Syntax
 
 <input ng-bind="expression"/> 
 
-For more details click on the link 
-•	Data Binding in AngularJS
+
 Question 10: What is a Factory method in AngularJS?
 
 Answer
 
-AngularJS Factory: the purpose of Factory is also the same as Service, however in this case we create a new object and add functions as properties of this object and at the end we return this object.
+AngularJS Factory: the purpose of Factory is also the same as Service, however in this case we create a new object and add functions as properties of this object and 
+at the end we return this object.
 
 Factories module.factory( 'factoryName', function ); 
 
@@ -390,81 +424,81 @@ Example
 40.	return a + b;   
 41.	};   
 42.	});   
+
 When to use Factory: It is just a collection of functions like a class. Hence, it can be instantiated in different controllers when you are using it with a constructor function.
 
-For more details click on the link 
-•	Service and Factory in AngularJS
-•	Services in AngularJS Simplified With Examples
+
 Question 11: How are validations implemented in AngularJS?
-
 Answer
-
-One of the coolest features of AngularJS is client-side validation. There are so many form directives available in AngularJS. We will talk about some of them here, we will also explain custom validation. Using it you can create your own validations.
+One of the coolest features of AngularJS is client-side validation. There are so many form directives available in AngularJS. 
+We will talk about some of them here, we will also explain custom validation. Using it you can create your own validations.
 
 Initial requirement is reference,
 1.	<script src="~/Scripts/angular.js"></script>   
+
 1.	Data type validation
 
-a.In Html control use type field to specify the type of file.
-b..$error.{your data type} will help you to disply the message.
-1.	<p>  
-2.	    <input type="number" name="StudentRollNumber" ng-model="StudentRollNumber" required>  
-3.	    <span style="color:red" ng- show="myForm.StudentRollNumber.$dirty && myForm.StudentRollNumber.$invalid">   
-4.	<span ng-show="myForm.StudentRollNumber.$error.required">Student Roll Number is required.</span>  
-5.	    <span ng-show="myForm.StudentRollNumber.$error.number">Not valid number!</span>  
-6.	    </span>  
-7.	</p>  
+ a.In Html control use type field to specify the type of file.
+ b..$error.{your data type} will help you to disply the message.
+   	<p>  
+   	    <input type="number" name="StudentRollNumber" ng-model="StudentRollNumber" required>  
+   	    <span style="color:red" ng- show="myForm.StudentRollNumber.$dirty && myForm.StudentRollNumber.$invalid">   
+   	<span ng-show="myForm.StudentRollNumber.$error.required">Student Roll Number is required.</span>  
+   	    <span ng-show="myForm.StudentRollNumber.$error.number">Not valid number!</span>  
+   	    </span>  
+   	</p>  
+
 2.	Required filed validation
 
-a. Put attribute as required in HTML control.
-b..$error.required helps you to display the required field message.
-1.	<p>  
-2.	  
-3.	    <input type="text" name="Student" ng-model="Student" required>  
-4.	    <span style="color:red" ng-show="myForm.Student.$dirty && myForm.Student.$invalid">   
-5.	<span ng-show="myForm.Student.$error.required">Student Name is required.</span>  
-6.	    </span>  
-7.	</p>  
+   a..Put attribute as required in HTML control.
+   b..$error.required helps you to display the required field message.
+    	<p>  
+    	  
+    	    <input type="text" name="Student" ng-model="Student" required>  
+    	    <span style="color:red" ng-show="myForm.Student.$dirty && myForm.Student.$invalid">   
+    	<span ng-show="myForm.Student.$error.required">Student Name is required.</span>  
+    	    </span>  
+    	</p>  
+
+
 3.	Date Validation
+  a. Specify the type as date and
+  b. Format it will take as systems built-in format
+  c. .$error.date helps you to display the required field message.
+     	<p>  
+     	    Student Birth Date:<br>  
+     	    <input type="date" name="BirthDate" ng-model="BirthDate" required placeholder="yyyy-MM-dd">  
+     	    <span style="color:red" ng-show="myForm.BirthDate.$dirty && myForm.BirthDate.$invalid">   
+     	<span ng-show="myForm.BirthDate.$error.required">Student Birth Date is required.</span>  
+     	    <span ng-show="myForm.BirthDate.$error.date">Not a Valid Date.</span>  
+     	    </span>  
+     	</p>  
+     	
+Email Validation
+  a. Specify the type as Email and
+  b..$error.email helps you to display the required field message.
+      	<input type="email" name="email" ng-model="email" required>  
+      	<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">   
+      	<span ng-show="myForm.email.$error.required">Email is required.</span>  
+      	<span ng-show="myForm.email.$error.email">Invalid email address.</span>  
+      	  
+      	</span>  
+      
+Range Validation Max and Min
+  a. Specify Max or Min attribute
+  b..$error.max or .$error.min helps you to display the error message.
+       	<input type="number" name="marks" ng-model="marks" max="100" required>   
+       	<span style="color:red" ng-show="myForm.marks.$dirty && myForm.marks.$invalid">   
+       	<span ng-show="myForm.marks.$error.required">Email is required.</span>   
+       	<span ng-show="myForm.marks.$error.number">Invalid number.</span>   
+       	<span ng-show="myForm.marks.$error.max">Max Percentage is 100.</span>   
+       	</span>  
 
-a. Specify the type as date and
-b. Format it will take as systems built-in format
-c. .$error.date helps you to display the required field message.
-1.	<p>  
-2.	    Student Birth Date:<br>  
-3.	    <input type="date" name="BirthDate" ng-model="BirthDate" required placeholder="yyyy-MM-dd">  
-4.	    <span style="color:red" ng-show="myForm.BirthDate.$dirty && myForm.BirthDate.$invalid">   
-5.	<span ng-show="myForm.BirthDate.$error.required">Student Birth Date is required.</span>  
-6.	    <span ng-show="myForm.BirthDate.$error.date">Not a Valid Date.</span>  
-7.	    </span>  
-8.	</p>  
-4.	Email Validation
 
-a. Specify the type as Email and
-b..$error.email helps you to display the required field message.
-1.	<input type="email" name="email" ng-model="email" required>  
-2.	<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">   
-3.	<span ng-show="myForm.email.$error.required">Email is required.</span>  
-4.	<span ng-show="myForm.email.$error.email">Invalid email address.</span>  
-5.	  
-6.	</span>  
-5.	Range Validation Max and Min
-
-a. Specify Max or Min attribute
-b..$error.max or .$error.min helps you to display the error message.
-1.	<input type="number" name="marks" ng-model="marks" max="100" required>   
-2.	<span style="color:red" ng-show="myForm.marks.$dirty && myForm.marks.$invalid">   
-3.	<span ng-show="myForm.marks.$error.required">Email is required.</span>   
-4.	<span ng-show="myForm.marks.$error.number">Invalid number.</span>   
-5.	<span ng-show="myForm.marks.$error.max">Max Percentage is 100.</span>   
-6.	</span>  
-For more details click on the link
-•	AngularJS Validation In MVC - Part Two
 Question 12: What is $rootscope and how do we use it?
-
 Answer
-
-$rootscope provides access to the top of the scope hierarchy, a scope provides a separation between View and its Model. Every application has a $rootScope provided by AngularJS and every other scope is its child scope.
+$rootscope provides access to the top of the scope hierarchy, a scope provides a separation between View and its Model. 
+Every application has a $rootScope provided by AngularJS and every other scope is its child scope.
 
 Now see how to use it step by step,
 
@@ -472,94 +506,86 @@ Step 1
 
 First of all you need to add an external Angular.js file to your application, "angular.min.js."
 
-For this you can go to the AngularJS official site or download my source code and then fetch it or you can click on this link to download it: ANGULARJS.
-
-After downloading the external file you need to add this file to the Head section of your application.
-1.	<head runat="server">  
-2.	    <title></title>  
-3.	    <script src="angular.min.js"></script>  
-4.	</head>  
+<head runat="server">  
+      	    <title></title>  
+      	    <script src="angular.min.js"></script>  
+      	</head>  
 Step 2
 
 Now after adding the External JS file the first thing you need to do is to add ng-app in the <HTML> Tag otherwise your application will not run.
-1.	<html ng-app xmlns="http://www.w3.org/1999/xhtml">  
-Now, I will create a JavaScript function in which the $rootScope service will be initiated.
-1.	<script>  
-2.	        angular.module('app', []).controller('x', function ($scope, $rootScope) {  
-3.	            $rootScope.showAlert = "Hello Everyone";  
-4.	        });  
-5.	   
-6.	        angular.module('app').controller('x2', function ($scope, $rootScope) {  
-7.	            $scope.val = $rootScope.showAlert;  
-8.	            alert($scope.val);  
-9.	        });  
-10.	    </script> 
-Here, I created two angular.modules, in the first module I created a controller named "x", in this controller the "showAlert" variable is used with the $rootScope, in this a showAlert message is provided.
-
+  1.	<html ng-app >  
+  Now, I will create a JavaScript function in which the $rootScope service will be initiated.
+      <script>  
+              angular.module('app', [])
+               .controller('x', function ($scope, $rootScope) {  
+                  $rootScope.showAlert = "Hello Everyone";  
+              });  
+         
+              angular.module('app')
+               .controller('x2', function ($scope, $rootScope) {  
+                  $scope.val = $rootScope.showAlert;  
+                  alert($scope.val);  
+              });  
+      	 </script> 
+Here, I created two angular.modules, in the first module I created a controller named "x", in this controller the "showAlert" variable is used with the $rootScope, 
+in this a showAlert message is provided.
 In the second controller a variable "val" is used but it is taken under $scope, the value of rootScope is provided in this variable and then is provided in the alert.
 
-Now our work on the View is completed so we can work on the ViewModel.
-
 Step 3
+      	<body>  
+      	    <form id="form1" runat="server">  
+      	        <div ng-app="app">        	      
+                 <div ng-controller="x"></div>  
+                 <div ng-controller="x2">{{val}}</div>  
+               </div>  
+      	    </form>  
+      	</body>  
 
-1.	<body>  
-2.	    <form id="form1" runat="server">  
-3.	        <div ng-app="app">  
-4.	      
-5.	    <div ng-controller="x"></div>  
-6.	      <div ng-controller="x2">{{val}}</div>  
-7.	    </div>  
-8.	    </form>  
-9.	</body>  
-Here, I took a Div that is bound using the ng-app, after this two Divs are used, one of these is bound to the first controller, "x", and the second is bound to "x2"; both use the ng-controller.
-
+Here, I took a Div that is bound using the ng-app, after this two Divs are used, 
+one of these is bound to the first controller, "x", and the second is bound to "x2"; both use the ng-controller.
 In the second div the "val" variable is bound so this div will display the text that is passed in the val.
 
 Now our application is ready for execution.
 
 Output
 
-On running the application an Alert Message will be displayed while the page is loading,
-
- 
-
-When you click on the "OK" button the same message will be displayed on the webform as well.
+      On running the application an Alert Message will be displayed while the page is loading,
+      When you click on the "OK" button the same message will be displayed on the webform as well.
 
  
 
 The complete code of this application is as follows,
-1.	<html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">  
-2.	<head runat="server">  
-3.	    <title></title>  
-4.	    <script src="angular.min.js"></script>  
-5.	    <script>  
-6.	        angular.module('app', []).controller('x', function ($scope, $rootScope) {  
-7.	            $rootScope.showAlert = "Hello Everyone";  
-8.	        });  
-9.	   
-10.	        angular.module('app').controller('x2', function ($scope, $rootScope) {  
-11.	            $scope.val = $rootScope.showAlert;  
-12.	            alert($scope.val);  
-13.	        });  
-14.	    </script>  
-15.	</head>  
-16.	<body>  
-17.	    <form id="form1" runat="server">  
-18.	        <div ng-app="app">  
-19.	      
-20.	    <div ng-controller="x"></div>  
-21.	      <div ng-controller="x2">{{val}}</div>  
-22.	    </div>  
-23.	    </form>  
-24.	</body>  
-25.	</html>  
-For more visit the following link, 
-•	$rootScope Service in AngularJS
+      <html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">  
+      <head runat="server">  
+          <title></title>  
+          <script src="angular.min.js"></script>  
+          <script>  
+              angular.module('app', []).controller('x', function ($scope, $rootScope) {  
+                  $rootScope.showAlert = "Hello Everyone";  
+              });  
+         
+      	        angular.module('app').controller('x2', function ($scope, $rootScope) {  
+      	            $scope.val = $rootScope.showAlert;  
+      	            alert($scope.val);  
+      	        });  
+      	    </script>  
+      	</head>  
+      	<body>  
+      	    <form id="form1" runat="server">  
+      	        <div ng-app="app">  
+      	      
+      	    <div ng-controller="x"></div>  
+      	      <div ng-controller="x2">{{val}}</div>  
+      	    </div>  
+      	    </form>  
+      	</body>  
+      	</html>  
+
+
 Question 13: Explain what is Dependency Injection in AngularJS?
-
 Answer 
-
-Dependency Injection is one of the best features of AngularJS. It is a software design pattern in which objects are passed as dependencies. It helps us to remove hard coded dependencies and makes dependencies configurable. Using Dependency Injection, we can make components maintainable, reusable and testable.
+Dependency Injection is one of the best features of AngularJS. It is a software design pattern in which objects are passed as dependencies. 
+It helps us to remove hard coded dependencies and makes dependencies configurable. Using Dependency Injection, we can make components maintainable, reusable and testable.
 
 Dependency Injection is required for the following
 •	Separating the process of creation and consumption of dependencies.
@@ -567,91 +593,56 @@ Dependency Injection is required for the following
 •	We can change the dependencies when required.
 •	It allows injecting mock objects as dependencies for testing.
 AngularJS uses dependency with several types
-•	Value
-•	Factory
-•	Service
-•	Provider
-•	Constant
+      •	Value
+      •	Factory
+      •	Service
+      •	Provider
+      •	Constant
 A simple case of dependency injection in Angular js
-1.	AppModule.controller("AppController", function($scope, $window, $log,$http)   
-2.	{   
-3.	  
-4.	});   
-For more details click on the link 
-•	Basic Concepts in AngularJs
+   	AppModule.controller("AppController", function($scope, $window, $log,$http)   
+   	{   
+   	  
+   	});   
+
+
 Question 14: Explain Convert Text To Uppercase Using AngularJS.
-
 Answer
-
 AngularJS provides a feature for converting all the letters of text into uppercase letters. I will explain this feature by creating a sample application.
 
-First of all you need to add an external Angular.js file to your application, in other words "angular.min.js".For this you can go to the AngularJS official site. After downloading the external file you need to add this file to the Head section of your application.
-
-The complete code of this application is as follows
-1.	<html ng-app xmlns="http://www.w3.org/1999/xhtml">  
-2.	  
-3.	<head runat="server">  
-4.	    <title></title>  
-5.	    <script src="angular.min.js"></script>  
-6.	    <script>  
-7.	        function x($scope) {  
-8.	            $scope.test = "this text will be displayed in Uppercase";  
-9.	        }  
-10.	    </script>  
-11.	</head>  
-12.	  
-13.	<body>  
-14.	    <form id="form1" runat="server">  
-15.	        <div ng-controller="x">  
-16.	            Without Uppercase:-  
-17.	            <p>{{test}}</p>  
-18.	            <br /> With Uppercase:-  
-19.	            <p>{{test|uppercase}}</p>  
-20.	        </div>  
-21.	    </form>  
-22.	</body>  
-23.	  
-24.	</html>  
- 
+    	            <p>{{test|uppercase}}</p>  
 
 
-For more details click on the link 
-•	Convert Text To Uppercase Using AngularJS
 Question 15: Explain ng-repeat directive.
-
 Answer
 
 The ng-repeat directive is the most used and very useful AngularJS Directive feature. It iterates over a collection of items and creates DOM elements. It constantly monitors the source of data to re-render a template in response to change.
 
 Syntax of ng-repeat
-1.	<table class="table table-bordered">  
-2.	    <tr ng-repeat="empin empDetails">  
-3.	        <td>{{emp.name}}</td>  
-4.	        <td>{{emp.salary}}</td>  
-5.	    </tr>  
-6.	</table>  
+    
+    	    <tr ng-repeat="empin empDetails">  
+    	        <td>{{emp.name}}</td>  
+    	        <td>{{emp.salary}}</td>  
+    	    </tr>  
+      
 Here, ng-repeat directive iterates over the empDetails collection and creates a <tr> DOM element for each entry in the collection.
-
 The ng-repeat directive creates a new scope for each element of a collection.
-
 Variables created by ng-repeat 
 
-AngularJS ng-repeat directive creates so many special variables in a scope created for each and every individual entry. These variables are very important to find the position of an element within a collection.
+AngularJS ng-repeat directive creates so many special variables in a scope created for each and every individual entry. 
+These variables are very important to find the position of an element within a collection.
 
 Below are the some important variables created by ng-repeat 
-1.	$index
-2.	$first
-3.	$middle
-4.	$last
-For more details click on the link
-•	AngularJS ngRepeat Directive
+         1.	$index
+         2.	$first
+         3.	$middle
+         4.	$last
+
+
 Question 16: What is controller in AngularJS?
-
 Answer
-
-A controller is a set of JavaScript functions which is bound to a specified scope, the ng-controllerdirective. Angular will instantiate the new controller object, and injects the new scope as a dependency. It contains business logic for the view and avoids using controller to manipulate the DOM. 
-
- 
+A controller is a set of JavaScript functions which is bound to a specified scope, the ng-controller directive. 
+Angular will instantiate the new controller object, and injects the new scope as a dependency. 
+It contains business logic for the view and avoids using controller to manipulate the DOM. 
 
 Controller Rules
 •	We can use controller to set up the initial state of the scope object and add behavior to that object.
@@ -671,16 +662,16 @@ ng-Controller directive
 ng-Controller directive is an associated controller class to the view.
 
 How to use ng-Controller
-1.	<Any ng-Controller=”expression”>  
-2.	</Any>  
-3.	<div ng-app="mainApp" ng-controller="SimpleController">  
-4.	</div>  
-For more details click on the link
-•	Understanding The Controllers - Part 4
+     
+     	<div ng-app="mainApp" ng-controller="SimpleController">  
+     	</div>  
+or
+     	<div ng-Controller=”expression”>  
+     	</div>  
+
+
 Question 17: What are the filters in AngularJS?
-
 Answer
-
 Filters are used to modify the data and can be clubbed in expression or directives using a pipe character. A filter formats the value of an expression for display to the user. They can be used in view templates, controllers, or services, and we can easily create our own filter. Filter is a module provided by AngularJS. There are nine components of filter which are provided by AngularJS. We can write custom as well.
 •	currency
 •	date
@@ -691,13 +682,13 @@ Filters are used to modify the data and can be clubbed in expression or directiv
 •	number
 •	orderBy
 •	uppercase
-Currency It will change all the digits to currency and "$" is the default currency.
+
+Currency 
+  It will change all the digits to currency and "$" is the default currency.
 
 {{ x | currency}}
-
-Output
  
-
+ 
 Date
 
 It will change all the digits into the date according to some rules, like the default date will be "44 years 2 months 10 days" earliar and 1000 will add 1 second into it.
@@ -757,54 +748,52 @@ It will change all the letters to uppercase.
 Output
 
  
-
-For more details click on the link
-•	Built-in Filters in Angular.js
 Question 18: Explain Module And Controller In AngularJS.
-
 Answer
+   AngularJS module is nothing but a container of all angular components like controller, services, directive, filter, config etc
 
-AngularJS module is nothing but a container of all angular components like controller, services, directive, filter, config etc
-
-What is Module
-
-Let me explain why module is required in AngularJS. In .NET console application there is a main method and what main method does is, it’s an entry point of application. It is the same as angular module and is an entry point. Using module we can decide how the AngularJS application should be bootstrapped.
 
 We can create a simple module using the following code.
-1.	var myApp = angular.module(‘myModuleApp’,[]);   
+        var myApp = angular.module(‘myModuleApp’,[]);  
+        
 In the above code myModuleApp is the module name and if this module is dependent on other modules we can inject in “[]”.
 
 What is Controller?
 
-Controller is a JavaScript constructor function which controls the data. I am not going to cover what are the types of functions in this article but let me give some brief information about constructor function. In constructor function when we call that function that function creates a new object each time.
+Controller is a JavaScript constructor function which controls the data.
+In constructor function when we call that function that function creates a new object each time.
 
 Let’s make a controller.
 
-1.	myApp.controller(‘myController’, function($scope)  
-2.	{  
-3.	  
-4.	});  
+  	myApp.controller(‘myController’, function($scope)  
+  	{  
+  	  
+  	});  
  
 
-For more details click on the link 
-•	Module And Controller In AngularJS
+
 Question 19: What are the services in AngularJS?
-
 Answer
+Services are functions that are responsible for specific tasks in an application. 
+AngularJS services are designed based on two main feature.
 
-Services are one of the most important concepts in AngularJS. In general services are functions that are responsible for specific tasks in an application. AngularJS services are designed based on two principles.
 1.	Lazily instantiated 
-
-Angular only instantiates a service when an application component depends on it using dependency injection for making the Angular codes robust and less error prone.
+   Angular only instantiates a service when an application component use that using dependency injection for making the Angular codes robust and less error prone.
 
 2.	Singletons
+   Each component is dependent on a service that gets a reference to the single instance generated by the service factory.
 
-Each component is dependent on a service that gets a reference to the single instance generated by the service factory.
-
-AngularJS provides many built in services, for example, $http, $route, $window, $location and so on. Each service is responsible for a specific task, for example, $http is used to make an Ajax call to get the server data. $route defines the routing information and so on. Builtin services are always prefixed with the $ symbol.
+AngularJS provides many built in services, for example, $http, $route, $window, $location and so on. 
+Each service is responsible for a specific task, 
+      for example, 
+        $http is used to make an Ajax call to get the server data. 
+        $route defines the routing information and so on. 
+Builtin services are always prefixed with the $ symbol.
 AngularJS internal services
 
-AngularJS internally provides many services that we can use in our application. $http is one example. There are other useful services, such as $route, $window, $location and so on. Some of the commonly used services in any AngularJS applications are listed below.
+AngularJS internally provides many services that we can use in our application. $http is one example. 
+There are other useful services, such as $route, $window, $location and so on. 
+Some of the commonly used services in any AngularJS applications are listed below.
 •	$window Provide a reference to a DOM object.
 •	$Location Provides reference to the browser location.
 •	$timeout Provides a reference to window.settimeout function.
@@ -817,16 +806,15 @@ AngularJS internally provides many services that we can use in our application. 
 •	$document Used to access the window. Document object.
 •	$exceptionHandler Used for handling exceptions.
 •	$q: Provides a promise object. 
-For more details click on the link
-•	Services in AngularJS For Beginners
+
+
 Question 20: Explain double click event in AngularJS?
-
 Answer
-
-ng-dblclick allows you to specify custom behavior on a double-click event of the mouse on the web page. We can use it (ng-dblclick) as an attribute of the HTML element like,
-1.	<ANY_HTML_ELEMENT ng-dblclick="{expression}">   
-2.	...   
-3.	</ANY_HTML_ELEMENT>  
+ng-dblclick allows you to specify custom behavior on a double-click event of the mouse on the web page.
+We can use it (ng-dblclick) as an attribute of the HTML element like,
+   	<ANY_HTML_ELEMENT ng-dblclick="{expression}">   
+   	...   
+   	</ANY_HTML_ELEMENT>  
 Use the following procedure to create a sample of a double-click event using AngularJS.
 
 First of all you need to add an external Angular.js file to your application, for this you can go to the AngularJS official site or download my source code and then fetch it or click on this link and download it: ANGULARJS. After downloading the external file you need to add this file to the Head section of your application as in the following,
