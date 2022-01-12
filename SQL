@@ -1,0 +1,24 @@
+https://www.edureka.co/blog/interview-questions/sql-interview-questions
+
+DDL (Data defination Language)
+  Create, Drop, Truncate, Alter, Rename
+
+DML (Data Manuplating Language)
+  Insert, Update ,Delete
+
+DQL (Data Query Language)
+  Select
+ 
+ 
+
+What is the difference between a View and a Cursor?
+Answer:
+  View: It is one of the database object which is also called as virtual table. 
+   •	 We can also say that it is a window through which we can see some part of database. 
+   •	 View is also called as stored query because we are going to fetch some data using View.
+   •	 View doesn’t contain any data. 
+   •	 It’s just a virtual table, which is used to get the records from the base table for which the view is created. 
+   •	 View is faster than ad hoc queries because when we create the view and execute it once. 
+        Next time onwards it will be available as the compiled format. So whenever the view is called, it will just execute rather than compiling.
+        
+  Cursor: 
