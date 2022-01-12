@@ -1,0 +1,39 @@
+1) Explain media type formatters.
+Answer
+In web API, media type formatters are classes that are responsible for serialization data. 
+Here, serialization generally means a process of translating data into a format that can be transmitted and reconstructed later.  
+Because of serializing request/response data, Web API can understand request data format in a better way and send data in a format that the client expects. 
+It simply specifies data that is being transferred among client and server in HTTP response or request. 
+
+Media Type Formatter Class	MIME Type	Description
+JsonMediaTypeFormatter --	application/json, text/json	(Handles JSON format)
+XmlMediaTypeFormatter --	application/xml, text/xml	(Handles XML format)
+FormUrlEncodedMediaTypeFormatter --	application/x-www-form-urlencoded (Handles HTM form URL-encoded data)
+JQueryMvcFormUrlEncodedFormatter --	application/x-www-form-urlencoded	 (Handles model-bound HTML form URL-encoded data)
+
+
+2) What is content negotiation in ASP.Net Web API?
+Answer
+By default Api send the api responce in JSON format if we didnt set any accept header.
+The client should be decide the format of the responce they want from the server. ex. responce from server be like XML, JSON etc.
+Using "Accept" header, client can specify the responce which he wants.
+  Accept: application/json
+  Accept: application/xml
+  
+  we can also set the multiple value in accept header and the api select 1st formatter 
+      ex: Accept: application/json,application/xml
+  
+  in responce, server send the value in json or xml form depending on the accept header of request. Also it sends format type in the responce Content-Type header
+  Content-Type : application/json
+  Content-Type : application/xml
+  
+  We can also set the quality factor in Accept header, so whose quality factor is greater that other server will pick that one.
+      ex: Accept: application/json;q=0.5,application/xml;q=0.8
+  so in this case response is in xml format because xml having greater quality factor 
+  
+3)  How to solve cross domain ajax request?
+Answer
+  1. by using JSONP (JSON with padding) --- install JSONP from nuget and configure it in application
+  2. by enabelind CORS(Cross Origin Resource Sharing)
+ 
+  
