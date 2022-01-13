@@ -9,6 +9,13 @@ DML (Data Manuplating Language)
 DQL (Data Query Language)
   Select
  
+Different types of Collation Sensitivity
+ Answer
+    Case Sensitivity: A and a and B and b.
+    Kana Sensitivity: Japanese Kana characters.
+    Width Sensitivity: Single byte character and double-byte character.
+    Accent Sensitivity.
+
  
 
 What is the difference between a View and a Cursor?
@@ -22,3 +29,136 @@ Answer:
         Next time onwards it will be available as the compiled format. So whenever the view is called, it will just execute rather than compiling.
         
   Cursor: 
+      Cursor is used to perform operation on row by row.
+      Example:
+          DECLARE @Variable1 INT, @Variable2 INT
+          DECLARE CursorName CURSOR FAST_FORWARD
+          FOR 
+          SELECT idcol FROM CursorTest
+          
+          OPEN CursorName
+          
+          FETCH NEXT FROM CursorName INTO @Variable1
+          
+          WHILE @@FETCH_STATUS = 0
+          BEGIN
+            PRINT CAST(@Variable1 AS VARCHAR(5))
+            
+            FETCH NEXT FROM CursorName INTO @Variable1
+          END
+          
+          CLOSE CursorName
+          DEALLOCATE CursorName
+      
+      
+
+Syntax:
+Insert 
+    INSERT INTO table_name (column1, column2, column3, ...)
+    VALUES (value1, value2, value3, ...);
+   
+Update
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+    
+Delete
+    DELETE FROM table_name 
+    WHERE condition;
+
+Case
+    SELECT OrderID, Quantity,
+      CASE
+          WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+          WHEN Quantity = 30 THEN 'The quantity is 30'
+          ELSE 'The quantity is under 30'
+      END AS QuantityText
+      FROM OrderDetails;
+
+    ------------Another scenario-----------
+    SELECT CustomerName, City, Country
+      FROM Customers
+      ORDER BY
+      (CASE
+          WHEN City IS NULL THEN Country
+          ELSE City
+      END);
+
+Create Table
+
+    CREATE TABLE Persons (
+        PersonID int NOT NULL PRIMARY KEY,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255)
+    );
+
+    ------------Another scenario-----------
+    CREATE TABLE TestTable AS
+      SELECT customername, contactname
+      FROM customers;
+
+
+Alter Table
+
+    ALTER TABLE Customers
+        ADD Email varchar(255);                  -- add column
+
+    ALTER TABLE table_name
+        DROP COLUMN column_name;                  -- Drop column
+    
+    ALTER TABLE table_name
+        ALTER COLUMN column_name datatype;        -- Change data Type
+
+
+
+Constraints in SQL server?
+Answer
+        NOT NULL       add the condition to the column that value cannot be null
+        CHECK          add the check expression(ex. EmpAge > 18) to the column that check the value is correct or valid
+        DEFAULT        uses to proved the default value while inserting 
+        UNIQUE         uses to make the column unique
+        PRIMARY KEY     uses to add the primary key index into the column
+        FOREIGN KEY     uses to add the Foreign key index into the column
+
+
+Aggregate functions in SQL server
+Answer
+    AVG(): returns the average value from specified columns.
+    COUNT(): returns the number of table rows, including rows with null values.
+    MAX(): returns the largest value among the group.
+    MIN(): returns the smallest value among the group.
+    SUM(): returns the total summed values(non-null) of the specified column.
+    FIRST(): returns the first value of an expression.
+    LAST(): returns the last value of an expression.
+  
+COALESCE function in sql server
+Answer
+  The syntax of COALESCE function is COALESCE (exp1, exp2, …. expn) 
+  COALESCE function returns the first non-NULL value, if all columns/expression having null value then it returns Null 
+  
+
+ROW_NUMBER and RANK are similar. 
+Answer
+    ----------- https://www.codeproject.com/Tips/1194700/The-Difference-Between-ROW-NUMBER-RANK-and-DENSE-R
+
+ROW_NUMBER numbers all rows sequentially (for example 1, 2, 3, 4, 5,6,7,8). 
+RANK provides the same numeric value for ties (for example 1, 2, 2, 4, 5,5,5,8).
+
+SELECT *,
+  ROW_NUMBER() OVER(PARTITION BY Subject_id ORDER BY marks) AS Row_Number,
+  RANK() OVER(PARTITION BY Subject_id ORDER BY marks) AS Rank,
+  DENSE_RANK() OVER(PARTITION BY Subject_id ORDER BY marks) AS Dense_rank
+FROM result
+
+
+
+
+
+
+
+
+
+
+
