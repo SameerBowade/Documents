@@ -1,0 +1,16 @@
+1) SET NOCOUNT ON
+    Always use SET NOCOUNT ON in every query or Procedure. This will block the count of affected rows so improves the performance in large amount of fetching the data.
+    This will improve the procedure execution duration time as well also improve the cPU utilization time.
+
+2) 
+    If we have an index on FirstName and LastName column of table then in where clause
+      condition 1: It took More Time as well as it also using "Index Scan" to give the result and Logical read is also double
+        Where FirstName + ' ' + LastName = 'Sameer Bowade'
+        
+       Condition 2: It took Less Time as well as it also using "Index Seek" to give the result and Logical read is very less
+          Where FirstName = SUBSTRING(@Name , 1, CharIndex(' ',@Name)-1)
+                And LastName = SUBSTRING(@Name , 1, CharIndex(' ',@Name)+1, LEN(@Name))
+                
+ 3)
+  
+                
