@@ -11,6 +11,9 @@
           Where FirstName = SUBSTRING(@Name , 1, CharIndex(' ',@Name)-1)
                 And LastName = SUBSTRING(@Name , 1, CharIndex(' ',@Name)+1, LEN(@Name))
                 
- 3)
+ 3) Cluster index is internally work as Binary Tree.
+    Every leafNode i.e. end not is a PageData which hold the actual data and before that all top nodes holds the count like 1-10, 11-20 and so on.
+    Root Node contains the middle count.
+    
   
                 
