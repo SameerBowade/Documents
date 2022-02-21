@@ -1,3 +1,19 @@
+REST : Representational State Transter
+It specifies set of constraints that system should follow 
+REST constraints
+Client Server
+Stateless
+Cacheable
+
+
+httpVerbs 
+HttpGet- Get the data
+HttpPost - insert the data
+HttpPut - Update the data
+HttpDelete - Delete the data
+HttpPatch - update the data partially
+
+
 
 1) What is content negotiation in ASP.Net Web API?
 Answer
@@ -22,9 +38,8 @@ Using "Accept" header, client can specify the responce which he wants.
 
 2) Explain media type formatters.
 Answer
-Whenever request comes to server, it looks the accept header and depending on the format which the client has requested the 
-Web API will choose the appropriate formatter for formatting the data.
-In web API, media type formatters are classes that are responsible for serialization data. 
+Whenever request comes to server, it looks the accept header and depending on the format which the client has requested the Web API will choose the appropriate formatter for formatting the data.
+In web API, media type formatters are classes that are responsible for serialization data.
 Here, serialization generally means a process of translating data into a format that can be transmitted and reconstructed later.  
 Because of serializing request/response data, Web API can understand request data format in a better way and send data in a format that the client expects. 
 It simply specifies data that is being transferred among client and server in HTTP response or request. 
@@ -34,6 +49,9 @@ JsonMediaTypeFormatter --	application/json, text/json	(Handles JSON format)
 XmlMediaTypeFormatter --	application/xml, text/xml	(Handles XML format)
 FormUrlEncodedMediaTypeFormatter --	application/x-www-form-urlencoded (Handles HTM form URL-encoded data)
 JQueryMvcFormUrlEncodedFormatter --	application/x-www-form-urlencoded	 (Handles model-bound HTML form URL-encoded data)
+
+when the request ie made without the Accep header then by default it send's the data in JSON format
+When a request made from the browser, the result always comes in xml format because it passes the header as Accept: text/html
 
 
 3)  How to solve cross domain ajax request?
